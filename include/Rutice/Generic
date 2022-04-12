@@ -1,0 +1,14 @@
+#pragma once
+
+#include "Internal/preproc.hpp"
+#include "Internal/basics.hpp"
+#include "Internal/font.hpp"
+#include "Internal/input.hpp"
+#include "Internal/object.hpp"
+#include "Internal/objectdef.hpp"
+#include "Internal/scene.hpp"
+#include "Internal/scenedef.hpp"
+#include "Internal/types.hpp"
+#include "Internal/components.hpp"
+#include "Internal/setup.hpp"
+using namespace debugConsole;
