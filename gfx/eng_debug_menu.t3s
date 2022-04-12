@@ -1,0 +1,15 @@
+--atlas -f rgba8888 -z auto
+dbg/console/empty.png
+dbg/console/debug.png
+dbg/console/warn.png
+dbg/console/error.png
+dbg/console/objects.png
+dbg/console/var.png
+dbg/console/up.png
+dbg/console/down.png
+dbg/console/start.png
+dbg/console/stop.png
+dbg/console/background.png
+dbg/console/debugpressed.png
+dbg/console/warnpressed.png
+dbg/console/errorpressed.png

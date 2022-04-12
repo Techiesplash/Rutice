@@ -1,0 +1,6 @@
+--atlas -f rgba8888 -z auto
+objects/cursor/1.png
+objects/cursor/2.png
+objects/cursor/3.png
+objects/cursor/4.png
+objects/cursor/5.png
