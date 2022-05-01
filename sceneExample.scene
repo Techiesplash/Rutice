@@ -1,0 +1,35 @@
+%scene testing
+	
+		str id cursorObject
+		str name CursorTop
+	@pushobj
+%scene debugConsole
+	
+	
+	@sprites romfs:/gfx/cursor_sprites.t3x
+
+	
+		$var id consoleDebug_textHandlerObject
+		$var pos	0 224 0
+		$var screen true
+		$var name consoleDebug_textHandler
+	@pushobj
+		$var id consoleDebug_debugLogButton
+		$var pos 16 224 0
+		$var screen true
+		$var name consoleDebug_debugButton
+	@pushobj
+		$var id consoleDebug_warnLogButton
+		$var pos 32 224 0
+		$var screen true
+		$var name consoleDebug_warnButton
+	@pushobj
+		$var id consoleDebug_errorLogButton
+		$var pos 48 224 0
+		$var screen true
+		$var name consoleDebug_errorButton
+	@pushobj
+		$var id cursorObject
+		$var screen true
+		$var name CursorBottom
+	@pushobj

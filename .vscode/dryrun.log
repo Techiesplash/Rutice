@@ -1,0 +1,25 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice'
+mkdir -p build
+mkdir -p romfs/gfx
+mkdir -p /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/build
+echo cursor_sprites.t3s
+tex3ds -i /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/cursor_sprites.t3s -H build/cursor_sprites.h -d /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/build/cursor_sprites.d -o romfs/gfx/cursor_sprites.t3x
+echo eng_debug_menu.t3s
+tex3ds -i /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/eng_debug_menu.t3s -H build/eng_debug_menu.h -d /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/build/eng_debug_menu.d -o romfs/gfx/eng_debug_menu.t3x
+make --no-print-directory -C build -f /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile
+echo cursor_sprites.t3s
+tex3ds -i /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/cursor_sprites.t3s -H cursor_sprites.h -d cursor_sprites.d -o cursor_sprites.t3x
+echo eng_debug_menu.t3s
+tex3ds -i /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/eng_debug_menu.t3s -H eng_debug_menu.h -d eng_debug_menu.d -o eng_debug_menu.t3x
+echo main.cpp
+arm-none-eabi-g++ -MMD -MP -MF /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/build/main.d -g -Wall -O2 -mword-relocations -exceptions -ffunction-sections -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft -I/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include -I/opt/devkitpro/libctru/include -I/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/build -D__3DS__ -std=gnu++11 -c /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/src/main.cpp -o main.o 
+echo linking Rutice.elf
+arm-none-eabi-g++ -specs=3dsx.specs -g -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft -Wl,-Map,Rutice.map     main.o   -L/opt/devkitpro/libctru/lib -lcitro2d -lcitro3d -lctru -lm  -o /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Rutice.elf
+arm-none-eabi-gcc-nm -CSn /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Rutice.elf > Rutice.lst
+smdhtool --create "RuticeEngine" "Built with devkitARM & libctru" "TechieSplash" /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/icon.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Rutice.smdh
+echo built ... Rutice.smdh
+3dsxtool /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Rutice.elf /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Rutice.3dsx --smdh=/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Rutice.smdh --romfs=/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/romfs
+echo built ... Rutice.3dsx
+make: Leaving directory '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice'
+ 

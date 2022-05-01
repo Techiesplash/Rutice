@@ -10,5 +10,4 @@
 #include "Internal/scenedef.hpp"
 #include "Internal/types.hpp"
 #include "Internal/components.hpp"
-#include "Internal/setup.hpp"
 using namespace debugConsole;

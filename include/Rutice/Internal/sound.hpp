@@ -14,7 +14,7 @@ namespace audio
         off_t size = ftell(file);
         fseek(file, 0, SEEK_SET);
         buffer = (u8*)linearAlloc(size);
-        off_t bytesRead = fread(buffer, 1, size, file);
+        //off_t bytesRead = fread(buffer, 1, size, file);
         fclose(file);
         csndPlaySound(8, SOUND_FORMAT_16BIT | SOUND_REPEAT, 48000, 1, 0, buffer, buffer, size);
         linearFree(buffer);

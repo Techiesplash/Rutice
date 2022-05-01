@@ -1,8 +1,10 @@
 #include <Rutice/Generic>
 #include <Rutice/Internal/sound.hpp>
+#include <Rutice/Internal/data.hpp>
 
 extern "C" void critical_signal_handler(int signal_number)
 {
+	
 	// Identify what signal it is
 	string temp = "UNKNOWN";
 	string desc = "No description available.";
@@ -10,11 +12,10 @@ extern "C" void critical_signal_handler(int signal_number)
 	{
 	case SIGABRT:
 		temp = "SIGABRT";
-		desc = "Signal 6 ( SIGABRT ) - SIGABRT is commonly used by libc and other libraries to abort the program in case of critical errors.";
-		break;
+		desc = "Signal 6 ( SIGABRT ) - Abort Signal";
 	case SIGSEGV:
 		temp = "SIGSEGV";
-		desc = "Signal 11 ( SIGSEGV ) - SIGSEGV, also known as segmentation fault, is raised when software attemptes to access a restricted area of memory.";
+		desc = "Signal 11 ( SIGSEGV ) - Segmentation Fault";
 		break;
 	default:
 		temp = "UNKNOWN";
@@ -63,16 +64,21 @@ void exitFunc(void)
 	}
 }
 
+
+
 int main()
 {
+	debugConsole::debug::Log("GPLv3 3DS Engine - 'Rutice'\nSprite-based engine for Nintendo 3DS\n");
 
+//	debug::Log("data.Internal.checkForTag returned " + std::to_string(data::Internal::checkForTag("<tag>fadsfasf</tag>","tag1")));
+	
 	// Abort handling
 	signal(SIGABRT, &critical_signal_handler);
 	signal(SIGSEGV, &critical_signal_handler);
-	//signal(SIGSTOP, &critical_signal_handler);
-//	signal(SIGQUIT, &critical_signal_handler);
+	// signal(SIGSTOP, &critical_signal_handler);
+	//	signal(SIGQUIT, &critical_signal_handler);
 
-	//std::atexit(&exitFunc);
+	// std::atexit(&exitFunc);
 
 	// Initialize graphics
 	romfsInit();
@@ -86,26 +92,31 @@ int main()
 	srvInit();
 	aptInit();
 	hidInit();
-	consoleInit(GFX_TOP, NULL);
+//  consoleInit(GFX_BOTTOM, NULL);
 
 	Render_top = C2D_CreateScreenTarget(GFX_TOP, GFX_LEFT);
 	Render_bottom = C2D_CreateScreenTarget(GFX_BOTTOM, GFX_RIGHT);
-	Scene *scene = loadScene("testing", Render_top);
-
+	Scene *scene = loadSceneUnstable("testing");
 
 	Scene *consoleScene = loadScene("debugConsole", Render_bottom);
 	printf("Console initialized.");
+//	printf("GPLv3 3DS Engine - 'Rutice'\nSprite-based engine for Nintendo 3DS\n");
 
 	updateRate = 0;
+
 	
+	
+
 	// Main loop
 	while (aptMainLoop())
 	{
-		printf("\x1b[36m");
-		printf("\x1b[36m\x1b[2;1HCPU:     %6.2f%%\x1b[K\x1b[0m", C3D_GetProcessingTime() * 6.0f);
-    	printf("\x1b[36m\x1b[3;1HGPU:     %6.2f%%\x1b[K\x1b[0m", C3D_GetDrawingTime() * 6.0f);
-  		printf("\x1b[36m\x1b[4;1HCmdBuf:  %6.2f%%\x1b[K\x1b[0m", C3D_GetCmdBufUsage() * 100.0f);
-		printf("\x1b[0m");
+
+
+	//	printf("\x1b[36m");
+	//	printf("\x1b[36m\x1b[2;1HCPU:     %6.2f%%\x1b[K\x1b[0m", C3D_GetProcessingTime() * 6.0f);
+	//	printf("\x1b[36m\x1b[3;1HGPU:     %6.2f%%\x1b[K\x1b[0m", C3D_GetDrawingTime() * 6.0f);
+	//	printf("\x1b[36m\x1b[4;1HCmdBuf:  %6.2f%%\x1b[K\x1b[0m", C3D_GetCmdBufUsage() * 100.0f);
+	//	printf("\x1b[0m");
 
 		C2D_TextBufClear(Text::dynamicBuf);
 		// gspWaitForVBlank();
@@ -125,18 +136,15 @@ int main()
 		if (kDown & KEY_DDOWN)
 		{
 			Controls::dPadDown = true;
-
 		}
 		else
 		{
 			Controls::dPadDown = false;
-
 		}
 
 		if (kDown & KEY_DUP)
 		{
 			Controls::dPadUp = true;
-	
 		}
 		else
 		{
@@ -145,26 +153,24 @@ int main()
 		if (kDown & KEY_DLEFT)
 		{
 			Controls::dPadLeft = true;
-	
 		}
 		else
 		{
 			Controls::dPadLeft = false;
 		}
 
-
 		// Events
 		scene->Tick();
 		consoleScene->Tick();
 
 		// Top screen
-		/*C3D_FrameBegin( C3D_FRAME_SYNCDRAW );
-		C2D_TargetClear( Render_top, C2D_Color32f( 0.1f, 0.1f, 0.1f, 1.0f ));
-		C2D_SceneBegin( Render_top );
+		C3D_FrameBegin(C3D_FRAME_SYNCDRAW);
+		C2D_TargetClear(Render_top, C2D_Color32f(0.1f, 0.1f, 0.1f, 1.0f));
+		C2D_SceneBegin(Render_top);
 
-		scene->Render( Render_top );
+		scene->Render(Render_top);
 
-		C3D_FrameEnd(0);*/
+		C3D_FrameEnd(0);
 
 		// Bottom screen
 		C3D_FrameBegin(C3D_FRAME_SYNCDRAW);
@@ -174,16 +180,15 @@ int main()
 		scene->Render(Render_bottom);
 		consoleScene->Render(Render_bottom);
 
-		//C2D_Text temp;
-		
-       // C2D_TextFontParse(&temp, components::consoleFont, Text::dynamicBuf, "Sample Text");
-       // C2D_TextOptimize(&temp);
-        //C2D_DrawText(&temp, C2D_WithColor, 1, 1, 1, 0.5f, 0.5f, C2D_Color32f(1.0f, 1.0f, 1.0f, 1.0f));
+		// C2D_Text temp;
 
-		//Text::drawText(0.0f, 0.0f, 10.0f, "Sample Text", components::consoleFont, 0.5f, 0.5f);
+		// C2D_TextFontParse(&temp, components::consoleFont, Text::dynamicBuf, "Sample Text");
+		// C2D_TextOptimize(&temp);
+		// C2D_DrawText(&temp, C2D_WithColor, 1, 1, 1, 0.5f, 0.5f, C2D_Color32f(1.0f, 1.0f, 1.0f, 1.0f));
+
+		// Text::drawText(0.0f, 0.0f, 10.0f, "Sample Text", components::consoleFont, 0.5f, 0.5f);
 		C3D_FrameEnd(0);
-
-		
+	
 	}
 	audio::audio_stop();
 

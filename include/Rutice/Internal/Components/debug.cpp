@@ -1,5 +1,10 @@
 #include <Rutice/Generic>
 
+struct logEntry {
+    string str;
+    uint8_t tag;  
+};
+
 /// Split up a string by a character into a vector. 
 /// Additional integer argument allows automatic line return.
 std::vector<string> splitString(string str, char seperator, int newlineDist = -1)
@@ -75,6 +80,87 @@ namespace components
         fvect2 offset = {0.0, 16.0};
         int maxLineHistory = 1024;
         int maxLines = 23;
+    }
+}
+
+namespace debugConsole
+{
+    int linereturnDist = 42;
+    namespace error
+    {
+        void Log(string str1)
+        {
+            string str = str1 + "\n";
+            printf("\033[1;31m%s\n\033[31m", str.c_str());
+            std::vector<string> tempSVector = splitString(str + '\n', '\n', linereturnDist);
+            for (auto &v : tempSVector)
+            {
+
+                components::debugInternal::errorLog.push_back(v);
+                if ((int)components::debugInternal::errorLog.size() > components::debugInternal::maxLineHistory)
+                {
+                    components::debugInternal::errorLog.erase(components::debugInternal::errorLog.begin());
+                }
+                else
+                {
+                    components::debugInternal::error_maxLogPosition++;
+                }
+            }
+            components::debugInternal::debugLog.push_back(" ");
+        }
+    }
+    namespace warn
+    {
+        
+        void Log(string str1)
+        {
+            string str = str1 + "\n";
+            printf("\033[1;33m%s\n\033[31m", str.c_str());
+            std::vector<string> tempSVector = splitString(str + '\n', '\n', linereturnDist);
+            for (auto &v : tempSVector)
+            {
+
+                components::debugInternal::warnLog.push_back(v);
+                if ((int)components::debugInternal::warnLog.size() > components::debugInternal::maxLineHistory)
+                {
+                    components::debugInternal::warnLog.erase(components::debugInternal::warnLog.begin());
+                }
+                else
+                {
+                    components::debugInternal::warn_maxLogPosition++;
+                }
+            }
+            components::debugInternal::debugLog.push_back(" ");
+        }
+    }
+    namespace debug
+    {
+        void Log(string str1)
+        {
+            string str = str1 + "\n";
+            printf(str.c_str());
+            std::vector<string> tempSVector = splitString(str + '\n', '\n', linereturnDist);
+            for (auto &v : tempSVector)
+            {
+                components::debugInternal::debugLog.push_back(v);
+                if ((int)components::debugInternal::debugLog.size() > components::debugInternal::maxLineHistory)
+                {
+                    components::debugInternal::debugLog.erase(components::debugInternal::debugLog.begin());
+                }
+                else
+                {
+                    components::debugInternal::debug_maxLogPosition++;
+                }
+            }
+            components::debugInternal::debugLog.push_back(" ");
+        }
+    }
+}
+
+namespace components
+{
+    namespace debugInternal
+    {
 
         /// Show-Hide button
         class debugConsole_ToggleDebugComponent : public Component
@@ -409,6 +495,7 @@ namespace components
                 this->object->touchBoundary[0].y = 0;
                 this->object->touchBoundary[1].x = 16;
                 this->object->touchBoundary[1].y = 16;
+                
             }
 
             void timers(int timerNumber) override
@@ -448,6 +535,7 @@ namespace components
             bool touchDead = true;
             void update() override
             {
+                try {
                 this->object->position.x = 0;
                 if (debugConsole_activeconsole == DEBUG)
                 {
@@ -560,6 +648,11 @@ namespace components
                         prevTouchY = touch.py;
                     }
                 }
+                } 
+                catch (...)
+                {
+                    
+                }
             }
 
             void draw() override
@@ -594,7 +687,7 @@ namespace components
                                     break;
                                 }
 
-                                Text::drawText(offset.x, offset.y + (i * 9 + (std::fmod(debug_logPosition, 1.0f) * -8)), 0.0f, debugLog[i + floor(debug_logPosition)].c_str(), consoleFont, 0.5f, 0.5f);
+                                Text::drawText(offset.x, offset.y + (i * 9 + (std::fmod(debug_logPosition, 1.0f) * -8)), 0.0f, debugLog[i + floor(debug_logPosition)].c_str(), consoleFont, 0.5f, 0.5f , C2D_Color32f(1.0f, 1.0f, 1.0f, 1.0f));
                             }
                             for (int i = 0; i < 20; i++)
                             {
@@ -602,7 +695,7 @@ namespace components
                                 C2D_SpriteMove(&temp, i * 16, controlBarY - 224);
                                 C2D_DrawSprite(&temp);
                             }
-                            Text::drawText(0, controlBarY - 224, 1.0f, "Debug Log", consoleFont,  0.5f, 0.5f, C2D_Color32f(0.0f, 0.0f, 0.0f, 1.0f));
+                  //          Text::drawText(0, controlBarY - 224, 1.0f, "Debug Log", consoleFont,  0.5f, 0.5f, C2D_Color32f(1.0f, 1.0f, 1.0f, 1.0f));
                         }
                         else if (debugConsole_activeconsole == ERROR)
                         {
@@ -629,7 +722,7 @@ namespace components
                                     break;
                                 }
 
-                                Text::drawText(offset.x, offset.y + (i * 9 + (std::fmod(error_logPosition, 1.0f) * -8)), 0.0f, errorLog[i + floor(error_logPosition)].c_str(), consoleFont, 0.5f, 0.5f);
+                                Text::drawText(offset.x, offset.y + (i * 9 + (std::fmod(error_logPosition, 1.0f) * -8)), 0.0f, errorLog[i + floor(error_logPosition)].c_str(), consoleFont, 0.5f, 0.5f, C2D_Color32f(1.0f, 1.0f, 1.0f, 1.0f));
                             }
                             for (int i = 0; i < 20; i++)
                             {
@@ -637,7 +730,7 @@ namespace components
                                 C2D_SpriteMove(&temp, i * 16, controlBarY - 224);
                                 C2D_DrawSprite(&temp);
                             }
-                            Text::drawText(0, controlBarY - 224, 1.0f, "Error Log", consoleFont,  0.5f, 0.5f, C2D_Color32f(0.0f, 0.0f, 0.0f, 1.0f));
+                        //    Text::drawText(0, controlBarY - 224, 1.0f, "Error Log", consoleFont,  0.5f, 0.5f, C2D_Color32f(1.0f, 1.0f, 1.0f, 1.0f));
                         }
                         else if (debugConsole_activeconsole == WARN)
                         {
@@ -664,7 +757,7 @@ namespace components
                                     break;
                                 }
 
-                                Text::drawText(offset.x, offset.y + (i * 9 + (std::fmod(warn_logPosition, 1.0f) * -8)), 0.0f, warnLog[i + floor(warn_logPosition)].c_str(), consoleFont, 0.5f, 0.5f);
+                                Text::drawText(offset.x, offset.y + (i * 9 + (std::fmod(warn_logPosition, 1.0f) * -8)), 0.0f, warnLog[i + floor(warn_logPosition)].c_str(), consoleFont, 0.5f, 0.5f, C2D_Color32f(1.0f, 1.0f, 1.0f, 1.0f));
                             }
                             for (int i = 0; i < 20; i++)
                             {
@@ -672,7 +765,7 @@ namespace components
                                 C2D_SpriteMove(&temp, i * 16, controlBarY - 224);
                                 C2D_DrawSprite(&temp);
                             }
-                            Text::drawText(0, controlBarY - 224, 1.0f, "Warn Log", consoleFont, 0.5f, 0.5f, C2D_Color32f(0.0f, 0.0f, 0.0f, 1.0f));
+                         //   Text::drawText(0, controlBarY - 224, 1.0f, "Warn Log", consoleFont, 0.5f, 0.5f, C2D_Color32f(1.0f, 1.0f, 1.0f, 1.0f));
                         }
                     }
                 }
@@ -682,73 +775,5 @@ namespace components
                 }
             }
         };
-    }
-}
-
-namespace debugConsole
-{
-    int linereturnDist = 47;
-    namespace error
-    {
-        void Log(string str)
-        {
-            std::vector<string> tempSVector = splitString(str + '\n', '\n', linereturnDist);
-            for (auto &v : tempSVector)
-            {
-
-                components::debugInternal::errorLog.push_back(v);
-                if ((int)components::debugInternal::errorLog.size() > components::debugInternal::maxLineHistory)
-                {
-                    components::debugInternal::errorLog.erase(components::debugInternal::errorLog.begin());
-                }
-                else
-                {
-                    components::debugInternal::error_maxLogPosition++;
-                }
-            }
-            components::debugInternal::debugLog.push_back(" ");
-        }
-    }
-    namespace warn
-    {
-        void Log(string str)
-        {
-            std::vector<string> tempSVector = splitString(str + '\n', '\n', linereturnDist);
-            for (auto &v : tempSVector)
-            {
-
-                components::debugInternal::warnLog.push_back(v);
-                if ((int)components::debugInternal::warnLog.size() > components::debugInternal::maxLineHistory)
-                {
-                    components::debugInternal::warnLog.erase(components::debugInternal::warnLog.begin());
-                }
-                else
-                {
-                    components::debugInternal::warn_maxLogPosition++;
-                }
-            }
-            components::debugInternal::debugLog.push_back(" ");
-        }
-    }
-    namespace debug
-    {
-        void Log(string str)
-        {
-            
-            std::vector<string> tempSVector = splitString(str + '\n', '\n', linereturnDist);
-            for (auto &v : tempSVector)
-            {
-                components::debugInternal::debugLog.push_back(v);
-                if ((int)components::debugInternal::debugLog.size() > components::debugInternal::maxLineHistory)
-                {
-                    components::debugInternal::debugLog.erase(components::debugInternal::debugLog.begin());
-                }
-                else
-                {
-                    components::debugInternal::debug_maxLogPosition++;
-                }
-            }
-            components::debugInternal::debugLog.push_back(" ");
-        }
     }
 }

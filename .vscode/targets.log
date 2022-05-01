@@ -1,0 +1,2190 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.3
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Sat Apr 30 07:33:11 2022
+
+# Variables
+
+# makefile (from '/opt/devkitpro/devkitARM/base_rules', line 6)
+PORTLIBS_PATH := /opt/devkitpro/portlibs
+# environment
+GDK_BACKEND = x11
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 23)
+AS := arm-none-eabi-as
+# environment
+OUTPUT = /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Rutice
+# environment
+LC_ALL = C
+# environment
+NO_AT_BRIDGE = 1
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 24)
+AR := arm-none-eabi-gcc-ar
+# environment
+ROMFS_T3XFILES =  romfs/gfx/cursor_sprites.t3x  romfs/gfx/eng_debug_menu.t3x
+# environment
+I3SOCK = /tmp/i3-root.5hOug0/ipc-socket.848
+# environment
+OFILES =     main.o  
+# environment
+ROMFS_FONTFILES = 
+# environment
+SUDO_UID = 1000
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /tmp/vscode-ipc-357c796c-5254-41dc-a1a0-5dbf1e008264.sock
+# environment
+VPATH = /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/src /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/data
+# environment
+VSCODE_CWD = /home/techiesplash
+# environment
+WINDOWPATH = 1
+# makefile (from '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile', line 64)
+LIBS := -lcitro2d -lcitro3d -lctru -lm 
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 43)
+SILENTMSG := @echo
+# environment
+TERMINATOR_UUID = urn:uuid:1a91165a-60a7-4e10-9a45-c8f4deb820e7
+# default
+MAKE_COMMAND := make
+# environment
+OFILES_BIN = $(subst ,,   )
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
+# makefile (from '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile', line 242)
+define shader-as
+	$(eval CURBIN := $*.shbin)
+	$(eval DEPSFILE := $(DEPSDIR)/$*.shbin.d)
+	echo "$(CURBIN).o: $< $1" > $(DEPSFILE)
+	echo "extern const u8" `(echo $(CURBIN) | sed -e 's/^\([0-9]\)/_\1/' | tr . _)`"_end[];" > `(echo $(CURBIN) | tr . _)`.h
+	echo "extern const u8" `(echo $(CURBIN) | sed -e 's/^\([0-9]\)/_\1/' | tr . _)`"[];" >> `(echo $(CURBIN) | tr . _)`.h
+	echo "extern const u32" `(echo $(CURBIN) | sed -e 's/^\([0-9]\)/_\1/' | tr . _)`_size";" >> `(echo $(CURBIN) | tr . _)`.h
+	picasso -o $(CURBIN) $1
+	bin2s $(CURBIN) | $(AS) -o $*.shbin.o
+endef
+# environment
+PWD = /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+MAIL = /var/mail/root
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+VSCODE_LOG_STACK = false
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_CODE_CACHE_PATH = /home/techiesplash/.config/Code - OSS/CachedData/e18005f0f1b33c29e81d732535d8c0e47cafb0b5
+# environment
+LANG = C
+# environment
+XAUTHORITY = /root/.Xauthority
+# default
+.LOADED := 
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# makefile
+MAKEFLAGS = pqrR --no-print-directory
+# makefile (from '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile', line 45)
+ICON := icon.png
+# environment
+DEVKITARM = /opt/devkitpro/devkitARM
+# makefile
+CURDIR := /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/build
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+DEPSDIR = /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/build
+# environment
+MFLAGS = -pqrR --no-print-directory
+# default
+.SHELLFLAGS := -c
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+_3DSXFLAGS = --smdh=/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Rutice.smdh --romfs=/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/romfs
+# makefile (from '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/build/main.d', line 1)
+MAKEFILE_LIST := /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile /opt/devkitpro/devkitARM/3ds_rules /opt/devkitpro/devkitARM/base_rules /opt/devkitpro/devkitARM/base_tools /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/build/cursor_sprites.d /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/build/eng_debug_menu.d /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/build/main.d
+# makefile (from '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile', line 61)
+ASFLAGS := -g -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft
+# automatic
+@F = $(notdir $@)
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_PID = 1636
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 28)
+RANLIB := arm-none-eabi-gcc-ranlib
+# environment
+DEVKITPPC = /opt/devkitpro/devkitPPC
+# environment
+HFILES =    cursor_sprites.h eng_debug_menu.h
+# makefile (from '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile', line 46)
+APP_AUTHOR := TechieSplash
+# makefile (from '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile', line 38)
+INCLUDES := include
+# automatic
+*F = $(notdir $*)
+# environment
+CHROME_DESKTOP = code-oss.desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = disabled:
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+APP_ICON = /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/icon.png
+# makefile (from '/opt/devkitpro/devkitARM/3ds_rules', line 11)
+CTRULIB = $(DEVKITPRO)/libctru
+# environment
+INCLUDE = -I/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include -I/opt/devkitpro/libctru/include -I/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/build
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# makefile
+SHELL = /bin/sh
+# environment
+OFILES_SOURCES = main.o  
+# environment
+SHLVL = 3
+# environment
+MAKELEVEL := 1
+# environment
+LIBPATHS = -L/opt/devkitpro/libctru/lib
+# default
+MAKE = $(MAKE_COMMAND)
+# makefile (from '/opt/devkitpro/devkitARM/3ds_rules', line 9)
+PATH := /opt/devkitpro/portlibs/3ds/bin:/opt/devkitpro/tools/bin:/opt/devkitpro/devkitARM/bin:/opt/devkitpro/portlibs/3ds/bin:/opt/devkitpro/tools/bin:/opt/devkitpro/devkitARM/bin:/opt/devkitpro/tools/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/home/techiesplash/.dotnet/tools:/home/techiesplash/.local/share/flatpak/exports/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+# default
+MAKEFILES := 
+# automatic
+^F = $(notdir $^)
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 5)
+UNAME_R := 5.15.36-1-lts
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 19)
+PREFIX := arm-none-eabi-
+# makefile (from '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile', line 70)
+LIBDIRS := /opt/devkitpro/libctru
+# environment
+SUDO_GID = 1000
+# environment
+SUDO_COMMAND = /usr/bin/startx
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?F = $(notdir $?)
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 50)
+bin2o = 	bin2s -a 4 -H `(echo $(<F) | tr . _)`.h $< | $(AS) -o $(<F).o
+# environment
+DEVKITPRO = /opt/devkitpro
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 4)
+UNAME_S := Linux
+# automatic
++F = $(notdir $+)
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+LOGNAME = techiesplash
+# makefile
+.DEFAULT_GOAL := /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Rutice.3dsx
+# makefile (from '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile', line 51)
+ARCH := -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft
+# makefile (from '/opt/devkitpro/devkitARM/3ds_rules', line 18)
+APP_DESCRIPTION := Built with devkitARM & libctru
+# environment
+DISPLAY = :0
+# environment
+GTK_MODULES = canberra-gtk-module
+# environment
+USER = techiesplash
+# default
+MAKE_VERSION := 4.3
+# 'override' directive
+.SHELLSTATUS := 0
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 44)
+SILENTCMD := @
+# makefile (from '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile', line 35)
+BUILD := build
+# environment
+TOPDIR = /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice
+# makefile (from '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile', line 42)
+GFXBUILD := romfs/gfx
+# makefile (from '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile', line 62)
+LDFLAGS = -specs=3dsx.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 30)
+ISVC = $(or $(VCBUILDHELPER_COMMAND),$(MSBUILDEXTENSIONSPATH32),$(MSBUILDEXTENSIONSPATH))
+# environment
+_ = /usr/bin/make
+# makefile (from '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile', line 57)
+CFLAGS := -g -Wall -O2 -mword-relocations -exceptions -ffunction-sections -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft -I/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include -I/opt/devkitpro/libctru/include -I/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/build -D__3DS__
+# environment
+COLORTERM = truecolor
+# environment
+SUDO_USER = techiesplash
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/techiesplash
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 13)
+DEVKITPATH = $(shell echo "$(DEVKITPRO)" | sed -e 's/^\([a-zA-Z]\):/\/\1/')
+# makefile (from '/opt/devkitpro/devkitARM/3ds_rules', line 7)
+PORTLIBS := /opt/devkitpro/portlibs/3ds
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+VSCODE_IPC_HOOK = /home/techiesplash/.config/Code - OSS/1.66.0-main.sock
+# environment
+TERM = xterm-256color
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 27)
+NM := arm-none-eabi-gcc-nm
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# makefile (from '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile', line 41)
+ROMFS := romfs
+# default
+SUFFIXES := 
+# environment
+LD = arm-none-eabi-g++
+# makefile (from '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile', line 34)
+TARGET := build
+# environment
+VSCODE_CLI = 1
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+VTE_VERSION = 6800
+# makefile (from '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile', line 59)
+CXXFLAGS := -g -Wall -O2 -mword-relocations -exceptions -ffunction-sections -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft -I/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include -I/opt/devkitpro/libctru/include -I/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/build -D__3DS__ -std=gnu++11
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 26)
+STRIP := arm-none-eabi-strip
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink guile load
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 22)
+CXX := arm-none-eabi-g++
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 21)
+CC := arm-none-eabi-gcc
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 25)
+OBJCOPY := arm-none-eabi-objcopy
+# environment
+T3XHFILES =  build/cursor_sprites.h  build/eng_debug_menu.h
+ 
+# makefile (from '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile', line 36)
+SOURCES := src
+# makefile (from '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile', line 44)
+APP_TITLE := RuticeEngine
+# makefile (from '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile', line 37)
+DATA := data
+# makefile (from '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile', line 39)
+GRAPHICS := gfx
+# environment
+_3DSXDEPS = /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Rutice.smdh
+# variable set hash-table stats:
+# Load=138/1024=13%, Rehash=0, Collisions=9/276=3%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# /opt/devkitpro/libctru/include/netinet (device 66310, inode 10753488): 4 files, 1 impossibilities.
+# /opt/devkitpro/libctru/include/3ds/gpu (device 66310, inode 10753415): 8 files, 6 impossibilities.
+# /opt/devkitpro/libctru/include/3ds/ndsp (device 66310, inode 10753424): 4 files, 2 impossibilities.
+# /opt/devkitpro/libctru/include/sys (device 66310, inode 10753492): 5 files, 1 impossibilities.
+# /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx (device 66310, inode 23465589): 7 files, no impossibilities so far.
+# /opt/devkitpro/libctru/include/c2d (device 66310, inode 10753520): 7 files, 5 impossibilities.
+# /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/build (device 66310, inode 24129052): 10 files, no impossibilities.
+# . (device 66310, inode 24129052): 10 files, no impossibilities.
+# /opt/devkitpro/libctru/include/3ds (device 66310, inode 10753394): 29 files, 19 impossibilities.
+# /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/data: could not be stat'd.
+# /opt/devkitpro/libctru/include (device 66310, inode 10753393): 14 files, 4 impossibilities.
+# /opt/devkitpro/libctru/include/c3d (device 66310, inode 10753499): 18 files, 16 impossibilities.
+# /opt/devkitpro/libctru/include/3ds/applets (device 66310, inode 10753401): 5 files, 3 impossibilities.
+# /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice (device 66310, inode 23204151): No files, no impossibilities so far.
+# /opt/devkitpro/libctru/include/3ds/allocator (device 66310, inode 10753397): 5 files, 3 impossibilities.
+# /opt/devkitpro/libctru/include/3ds/util (device 66310, inode 10753481): 5 files, 2 impossibilities.
+# /opt/devkitpro/libctru/include/3ds/services (device 66310, inode 10753430): 47 files, 45 impossibilities.
+# /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/src (device 66310, inode 24129049): 3 files, no impossibilities.
+
+# 181 files, 107 impossibilities in 18 directories.
+
+# Implicit Rules
+
+%.a:
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 12):
+	$(SILENTMSG) $(notdir $@)
+	@rm -f $@
+	$(SILENTCMD)$(AR) -rc $@ $^
+
+%.arm.o: %.arm.cpp
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 18):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CXX) -MMD -MP -MF $(DEPSDIR)/$*.arm.d $(CXXFLAGS) -marm -c $< -o $@ $(ERROR_FILTER)
+
+%.arm.o: %.arm.c
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 23):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CC) -MMD -MP -MF $(DEPSDIR)/$*.arm.d $(CFLAGS) -marm -c $< -o $@ $(ERROR_FILTER)
+
+%.arm.o: %.arm.m
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 28):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CC) -MMD -MP -MF $(DEPSDIR)/$*.arm.d $(OBJCFLAGS) -marm -c $< -o $@ $(ERROR_FILTER)
+
+%.thumb.o: %.thumb.cpp
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 33):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CXX) -MMD -MP -MF $(DEPSDIR)/$*.thumb.d $(CXXFLAGS) -mthumb -c $< -o $@ $(ERROR_FILTER)
+
+%.thumb.o: %.thumb.c
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 38):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CC) -MMD -MP -MF $(DEPSDIR)/$*.thumb.d $(CFLAGS) -mthumb -c $< -o $@ $(ERROR_FILTER)
+
+%.thumb.o: %.thumb.m
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 43):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CC) -MMD -MP -MF $(DEPSDIR)/$*.thumb.d $(OBJCFLAGS) -mthumb -c $< -o $@ $(ERROR_FILTER)
+
+%.iwram.o: %.iwram.cpp
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 48):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CXX) -MMD -MP -MF $(DEPSDIR)/$*.iwram.d $(CXXFLAGS) -marm -mlong-calls -c $< -o $@ $(ERROR_FILTER)
+
+%.iwram.o: %.iwram.c
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 53):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CC) -MMD -MP -MF $(DEPSDIR)/$*.iwram.d $(CFLAGS) -marm -mlong-calls -c $< -o $@ $(ERROR_FILTER)
+
+%.iwram.o: %.iwram.m
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 58):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CC) -MMD -MP -MF $(DEPSDIR)/$*.iwram.d $(OBJCFLAGS) -marm -mlong-calls -c $< -o $@ $(ERROR_FILTER)
+
+%.itcm.o: %.itcm.cpp
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 63):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CXX) -MMD -MP -MF $(DEPSDIR)/$*.itcm.d $(CXXFLAGS) -marm -mlong-calls -c $< -o $@ $(ERROR_FILTER)
+
+%.itcm.o: %.itcm.c
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 68):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CC) -MMD -MP -MF $(DEPSDIR)/$*.itcm.d $(CFLAGS) -marm -mlong-calls -c $< -o $@ $(ERROR_FILTER)
+
+%.itcm.o: %.itcm.m
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 73):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CC) -MMD -MP -MF $(DEPSDIR)/$*.itcm.d $(OBJCFLAGS) -marm -mlong-calls -c $< -o $@ $(ERROR_FILTER)
+
+%.o: %.cpp
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 79):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CXX) -MMD -MP -MF $(DEPSDIR)/$*.d $(CXXFLAGS) -c $< -o $@ $(ERROR_FILTER)
+
+%.o: %.c
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 84):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CC) -MMD -MP -MF $(DEPSDIR)/$*.d $(CFLAGS) -c $< -o $@ $(ERROR_FILTER)
+
+%.o: %.m
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 89):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CC) -MMD -MP -MF $(DEPSDIR)/$*.d $(OBJCFLAGS) -c $< -o $@ $(ERROR_FILTER)
+
+%.o: %.s
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 94):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CC) -MMD -MP -MF $(DEPSDIR)/$*.d -x assembler-with-cpp $(ASFLAGS) -c $< -o $@ $(ERROR_FILTER)
+
+%.o: %.S
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 99):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CC) -MMD -MP -MF $(DEPSDIR)/$*.d -x assembler-with-cpp $(ASFLAGS) -c $< -o $@ $(ERROR_FILTER)
+
+%.smdh: /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/icon.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile /opt/devkitpro/devkitARM/3ds_rules /opt/devkitpro/devkitARM/base_rules /opt/devkitpro/devkitARM/base_tools
+#  recipe to execute (from '/opt/devkitpro/devkitARM/3ds_rules', line 31):
+	$(SILENTCMD)smdhtool --create "$(APP_TITLE)" "$(APP_DESCRIPTION)" "$(APP_AUTHOR)" $(APP_ICON) $@
+	$(SILENTMSG) built ... $(notdir $@)
+
+%.3dsx: %.elf
+#  recipe to execute (from '/opt/devkitpro/devkitARM/3ds_rules', line 36):
+	$(SILENTCMD)3dsxtool $< $@ $(_3DSXFLAGS)
+	$(SILENTMSG) built ... $(notdir $@)
+
+%.elf:
+#  recipe to execute (from '/opt/devkitpro/devkitARM/3ds_rules', line 41):
+	$(SILENTMSG) linking $(notdir $@)
+	$(SILENTCMD)$(LD) $(LDFLAGS) $(OFILES) $(LIBPATHS) $(LIBS) -o $@
+	$(SILENTCMD)$(NM) -CSn $@ > $(notdir $*.lst)
+
+%.bin.o %_bin.h: %.bin
+#  recipe to execute (from '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile', line 221):
+	@echo $(notdir $<)
+	@$(bin2o)
+
+%.t3x.o %_t3x.h: %.t3x
+#  recipe to execute (from '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile', line 229):
+	@echo $(notdir $<)
+	@$(bin2o)
+
+%.bcfnt.o %_bcfnt.h: %.bcfnt
+#  recipe to execute (from '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile', line 235):
+	@echo $(notdir $<)
+	@$(bin2o)
+
+%.shbin.o %_shbin.h: %.v.pica %.g.pica
+#  recipe to execute (from '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile', line 254):
+	@echo $(notdir $^)
+	@$(call shader-as,$^)
+
+%.shbin.o %_shbin.h: %.v.pica
+#  recipe to execute (from '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile', line 258):
+	@echo $(notdir $<)
+	@$(call shader-as,$<)
+
+%.shbin.o %_shbin.h: %.shlist
+#  recipe to execute (from '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile', line 262):
+	@echo $(notdir $<)
+	@$(call shader-as,$(foreach file,$(shell cat $<),$(dir $<)$(file)))
+
+%.t3x %.h: %.t3s
+#  recipe to execute (from '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile', line 268):
+	@echo $(notdir $<)
+	@tex3ds -i $< -H $*.h -d $*.d -o $*.t3x
+
+%.bcfnt: %.ttf
+#  recipe to execute (from '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile', line 274):
+	@echo $(notdir $<)
+	@mkbcfnt -o $*.bcfnt $<
+
+# 29 implicit rules, 0 (0.0%) terminal.
+# Files
+
+/opt/devkitpro/libctru/include/3ds/gpu/enums.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/objects.png:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/eng_debug_menu.h: /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/background.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/debug.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/debugpressed.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/down.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/empty.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/error.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/errorpressed.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/objects.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/start.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/stop.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/up.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/var.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/warn.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/warnpressed.png
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/cursor_sprites.h: /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/objects/cursor/1.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/objects/cursor/2.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/objects/cursor/3.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/objects/cursor/4.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/objects/cursor/5.png
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/warn.png:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/cursor_sprites.t3s:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-26 09:33:31.181259651
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/ampxi.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+eng_debug_menu.t3x:
+#  Precious file (prerequisite of .PRECIOUS).
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/opt/devkitpro/libctru/include/3ds/services/gsplcd.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/gspgpu.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/up.png:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/src/main.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-28 13:44:25.971209862
+#  File has been updated.
+#  Successfully updated.
+
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/font.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-26 09:33:31.181259651
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/hid.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/c3d/framebuffer.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-28 15:02:14
+ 
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/result.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/ptmsets.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+cursor_sprites.h: /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/cursor_sprites.t3s
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'cursor_sprites'
+#  Also makes: cursor_sprites.t3x
+#  Last modified 2022-04-26 11:01:35.43983145
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile', line 268):
+	@echo $(notdir $<)
+	@tex3ds -i $< -H $*.h -d $*.d -o $*.t3x
+
+/opt/devkitpro/libctru/include/3ds/services/mic.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+eng_debug_menu.h: /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/eng_debug_menu.t3s
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'eng_debug_menu'
+#  Also makes: eng_debug_menu.t3x
+#  Last modified 2022-04-26 11:01:35.559829108
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile', line 268):
+	@echo $(notdir $<)
+	@tex3ds -i $< -H $*.h -d $*.d -o $*.t3x
+
+# Not a target:
+/opt/devkitpro/devkitARM/base_tools:
+#  Implicit rule search has been done.
+#  Last modified 2020-07-27 19:27:14
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/3dslink.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/ac.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/c3d/buffers.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-28 15:02:14
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/tex3ds.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-28 15:02:14
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/ipc.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/down.png:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/opt/devkitpro/libctru/include/3ds/services/ptmgets.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/types.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/c3d/lightlut.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-28 15:02:14
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/boss.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Components/CursorComponent.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-26 09:33:31.181259651
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/errf.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/qtm.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/c3d/texenv.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-28 15:02:14
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/objects/cursor/4.png:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Rutice.smdh:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/opt/devkitpro/libctru/include/3ds/services/ndm.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/objects/cursor/5.png:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/opt/devkitpro/libctru/include/3ds/services/y2r.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/objects/cursor/2.png:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.PRECIOUS: %.t3x %.bcfnt
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/opt/devkitpro/libctru/include/3ds/services/nwmext.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/c3d/effect.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-28 15:02:14
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/cam.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/c3d/light.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-28 15:02:14
+#  File has been updated.
+#  Successfully updated.
+
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Rutice.3dsx: /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Rutice.elf /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Rutice.elf /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Rutice.smdh
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Rutice'
+#  Last modified 2022-04-28 16:10:44.473775766
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/9=0%
+#  recipe to execute (from '/opt/devkitpro/devkitARM/3ds_rules', line 36):
+	$(SILENTCMD)3dsxtool $< $@ $(_3DSXFLAGS)
+	$(SILENTMSG) built ... $(notdir $@)
+
+# Not a target:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/errorpressed.png:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/sound.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-26 09:33:31.181259651
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/pmdbg.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/c3d/mtxstack.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-28 15:02:14
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/ptmsysm.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/allocator/mappable.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/applets/swkbd.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/gpu/shaderProgram.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/objects/cursor/1.png:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/opt/devkitpro/libctru/include/3ds/services/pmapp.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/input.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-26 09:33:31.181259651
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-26 09:33:31.181259651
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+%.t3x:
+ 
+#  Precious file (prerequisite of .PRECIOUS).
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/opt/devkitpro/libctru/include/3ds/font.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/scenedef.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-26 09:33:31.181259651
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/objects/cursor/3.png:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/preproc.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-26 09:33:31.181259651
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/util/decompress.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/objectdef.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-26 09:33:31.181259651
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+/opt/devkitpro/devkitARM/base_rules:
+#  Implicit rule search has been done.
+#  Last modified 2020-07-27 19:27:14
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+/opt/devkitpro/devkitARM/3ds_rules:
+#  Implicit rule search has been done.
+#  Last modified 2020-07-27 19:27:14
+#  File has been updated.
+#  Successfully updated.
+
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/object.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-26 10:36:21.060418067
+#  File has been updated.
+#  Successfully updated.
+
+romfs/gfx/eng_debug_menu.t3x: /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/background.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/debug.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/debugpressed.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/down.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/empty.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/error.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/errorpressed.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/objects.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/start.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/stop.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/up.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/var.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/warn.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/warnpressed.png
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/build/cursor_sprites.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-26 11:01:35.43983145
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/svc.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/var.png:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/opt/devkitpro/libctru/include/3ds/thread.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/cfgnor.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/exheader.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/util/utf.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+cursor_sprites.t3x:
+#  Precious file (prerequisite of .PRECIOUS).
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/opt/devkitpro/libctru/include/3ds/services/pxipm.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/c3d/renderqueue.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-28 15:02:14
+#  File has been updated.
+#  Successfully updated.
+
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Rutice.elf: main.o
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: '/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Rutice'
+#  Last modified 2022-04-28 16:10:44.463775966
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/9=0%
+#  recipe to execute (from '/opt/devkitpro/devkitARM/3ds_rules', line 41):
+	$(SILENTMSG) linking $(notdir $@)
+	$(SILENTCMD)$(LD) $(LDFLAGS) $(OFILES) $(LIBPATHS) $(LIBS) -o $@
+	$(SILENTCMD)$(NM) -CSn $@ > $(notdir $*.lst)
+
+/opt/devkitpro/libctru/include/3ds/services/mcuhwc.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/irrst.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/c3d/uniforms.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-28 15:02:14
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/fsreg.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/c2d/sprite.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-28 15:23:34
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/citro2d.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-28 15:23:34
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/build/main.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-28 16:10:44.233780607
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/mvd.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/synchronization.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/gpu/registers.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/gfx.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/c3d/fog.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-28 15:02:14
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/warnpressed.png:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/opt/devkitpro/libctru/include/3ds.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/c3d/attribs.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-28 15:02:14
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/opt/devkitpro/libctru/include/3ds/archive.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/ndsp/ndsp.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/fs.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/sslc.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/romfs.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/c2d/base.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-28 15:23:34
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/background.png:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/opt/devkitpro/libctru/include/3ds/services/ir.h:
+#  Implicit rule search has been done.
+ 
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/gpu/gpu.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/ptmu.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/types.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-26 09:33:31.181259651
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/c3d/texture.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-28 15:02:14
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/csnd.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/build/eng_debug_menu.d:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-26 11:01:35.559829108
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/nim.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/am.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/fspxi.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/c3d/types.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-28 15:02:14
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/allocator/linear.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/Components/debug.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-28 16:00:36.49604825
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/pxidev.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/applets/error.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/env.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/c3d/maths.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-28 15:02:14
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/news.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/srvpm.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+main.o: /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/src/main.cpp cursor_sprites.h eng_debug_menu.h /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/src/main.cpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Generic /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/preproc.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/basics.hpp /opt/devkitpro/libctru/include/3ds.h /opt/devkitpro/libctru/include/3ds/types.h /opt/devkitpro/libctru/include/3ds/result.h /opt/devkitpro/libctru/include/3ds/ipc.h /opt/devkitpro/libctru/include/3ds/svc.h /opt/devkitpro/libctru/include/3ds/exheader.h /opt/devkitpro/libctru/include/3ds/srv.h /opt/devkitpro/libctru/include/3ds/errf.h /opt/devkitpro/libctru/include/3ds/os.h /opt/devkitpro/libctru/include/3ds/synchronization.h /opt/devkitpro/libctru/include/3ds/thread.h /opt/devkitpro/libctru/include/3ds/gfx.h /opt/devkitpro/libctru/include/3ds/services/gspgpu.h /opt/devkitpro/libctru/include/3ds/console.h /opt/devkitpro/libctru/include/3ds/env.h /opt/devkitpro/libctru/include/3ds/util/decompress.h /opt/devkitpro/libctru/include/3ds/util/utf.h /opt/devkitpro/libctru/include/3ds/allocator/linear.h /opt/devkitpro/libctru/include/3ds/allocator/mappable.h /opt/devkitpro/libctru/include/3ds/allocator/vram.h /opt/devkitpro/libctru/include/3ds/services/ac.h /opt/devkitpro/libctru/include/3ds/services/am.h /opt/devkitpro/libctru/include/3ds/services/fs.h /opt/devkitpro/libctru/include/3ds/services/ampxi.h /opt/devkitpro/libctru/include/3ds/services/apt.h /opt/devkitpro/libctru/include/3ds/services/boss.h /opt/devkitpro/libctru/include/3ds/services/cam.h /opt/devkitpro/libctru/include/3ds/services/y2r.h /opt/devkitpro/libctru/include/3ds/services/cfgnor.h /opt/devkitpro/libctru/include/3ds/services/cfgu.h /opt/devkitpro/libctru/include/3ds/services/csnd.h /opt/devkitpro/libctru/include/3ds/services/dsp.h /opt/devkitpro/libctru/include/3ds/services/fspxi.h /opt/devkitpro/libctru/include/3ds/services/fsreg.h /opt/devkitpro/libctru/include/3ds/services/frd.h /opt/devkitpro/libctru/include/3ds/mii.h /opt/devkitpro/libctru/include/3ds/services/gsplcd.h /opt/devkitpro/libctru/include/3ds/services/hid.h /opt/devkitpro/libctru/include/3ds/services/irrst.h /opt/devkitpro/libctru/include/3ds/services/sslc.h /opt/devkitpro/libctru/include/3ds/services/httpc.h /opt/devkitpro/libctru/include/3ds/services/uds.h /opt/devkitpro/libctru/include/3ds/services/ndm.h /opt/devkitpro/libctru/include/3ds/services/nim.h /opt/devkitpro/libctru/include/3ds/services/nwmext.h /opt/devkitpro/libctru/include/3ds/services/ir.h /opt/devkitpro/libctru/include/3ds/services/ns.h /opt/devkitpro/libctru/include/3ds/services/pmapp.h /opt/devkitpro/libctru/include/3ds/services/pmdbg.h /opt/devkitpro/libctru/include/3ds/services/ps.h /opt/devkitpro/libctru/include/3ds/services/ptmu.h /opt/devkitpro/libctru/include/3ds/services/ptmsysm.h /opt/devkitpro/libctru/include/3ds/services/ptmgets.h /opt/devkitpro/libctru/include/3ds/services/ptmsets.h /opt/devkitpro/libctru/include/3ds/services/pxidev.h /opt/devkitpro/libctru/include/3ds/services/pxipm.h /opt/devkitpro/libctru/include/3ds/services/soc.h /opt/devkitpro/libctru/include/netinet/in.h /opt/devkitpro/libctru/include/sys/socket.h /opt/devkitpro/libctru/include/3ds/services/mic.h /opt/devkitpro/libctru/include/3ds/services/mvd.h /opt/devkitpro/libctru/include/3ds/services/nfc.h /opt/devkitpro/libctru/include/3ds/services/news.h /opt/devkitpro/libctru/include/3ds/services/qtm.h /opt/devkitpro/libctru/include/3ds/services/srvpm.h /opt/devkitpro/libctru/include/3ds/services/loader.h /opt/devkitpro/libctru/include/3ds/services/mcuhwc.h /opt/devkitpro/libctru/include/3ds/gpu/gx.h /opt/devkitpro/libctru/include/3ds/gpu/gpu.h /opt/devkitpro/libctru/include/3ds/gpu/registers.h /opt/devkitpro/libctru/include/3ds/gpu/enums.h /opt/devkitpro/libctru/include/3ds/gpu/shbin.h /opt/devkitpro/libctru/include/3ds/gpu/shaderProgram.h /opt/devkitpro/libctru/include/3ds/ndsp/ndsp.h /opt/devkitpro/libctru/include/3ds/ndsp/channel.h /opt/devkitpro/libctru/include/3ds/applets/swkbd.h /opt/devkitpro/libctru/include/3ds/applets/error.h /opt/devkitpro/libctru/include/3ds/applets/miiselector.h /opt/devkitpro/libctru/include/3ds/archive.h /opt/devkitpro/libctru/include/3ds/romfs.h /opt/devkitpro/libctru/include/3ds/font.h /opt/devkitpro/libctru/include/3ds/gdbhio_dev.h /opt/devkitpro/libctru/include/3ds/3dslink.h /opt/devkitpro/libctru/include/citro2d.h /opt/devkitpro/libctru/include/citro3d.h /opt/devkitpro/libctru/include/c3d/types.h /opt/devkitpro/libctru/include/c3d/maths.h /opt/devkitpro/libctru/include/c3d/mtxstack.h /opt/devkitpro/libctru/include/c3d/uniforms.h /opt/devkitpro/libctru/include/c3d/attribs.h /opt/devkitpro/libctru/include/c3d/buffers.h /opt/devkitpro/libctru/include/c3d/base.h /opt/devkitpro/libctru/include/c3d/texenv.h /opt/devkitpro/libctru/include/c3d/effect.h /opt/devkitpro/libctru/include/c3d/texture.h /opt/devkitpro/libctru/include/c3d/proctex.h /opt/devkitpro/libctru/include/c3d/light.h /opt/devkitpro/libctru/include/c3d/lightlut.h /opt/devkitpro/libctru/include/c3d/fog.h /opt/devkitpro/libctru/include/c3d/framebuffer.h /opt/devkitpro/libctru/include/c3d/renderqueue.h /opt/devkitpro/libctru/include/tex3ds.h /opt/devkitpro/libctru/include/c2d/base.h /opt/devkitpro/libctru/include/c2d/spritesheet.h /opt/devkitpro/libctru/include/c2d/sprite.h /opt/devkitpro/libctru/include/c2d/text.h /opt/devkitpro/libctru/include/c2d/font.h /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/font.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/basics.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/types.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/basics.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/input.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/object.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/types.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/objectdef.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/scene.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/scene.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/scenedef.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/types.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/components.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Components/CursorComponent.cpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/Components/debug.cpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/setup.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/sound.hpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'main'
+#  Last modified 2022-04-28 16:10:44.393777376
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := main.o
+# automatic
+# * := main
+# automatic
+# < := /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/src/main.cpp
+# automatic
+# + := /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/src/main.cpp cursor_sprites.h eng_debug_menu.h /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/src/main.cpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Generic /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/preproc.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/basics.hpp /opt/devkitpro/libctru/include/3ds.h /opt/devkitpro/libctru/include/3ds/types.h /opt/devkitpro/libctru/include/3ds/result.h /opt/devkitpro/libctru/include/3ds/ipc.h /opt/devkitpro/libctru/include/3ds/svc.h /opt/devkitpro/libctru/include/3ds/exheader.h /opt/devkitpro/libctru/include/3ds/srv.h /opt/devkitpro/libctru/include/3ds/errf.h /opt/devkitpro/libctru/include/3ds/os.h /opt/devkitpro/libctru/include/3ds/synchronization.h /opt/devkitpro/libctru/include/3ds/thread.h /opt/devkitpro/libctru/include/3ds/gfx.h /opt/devkitpro/libctru/include/3ds/services/gspgpu.h /opt/devkitpro/libctru/include/3ds/console.h /opt/devkitpro/libctru/include/3ds/env.h /opt/devkitpro/libctru/include/3ds/util/decompress.h /opt/devkitpro/libctru/include/3ds/util/utf.h /opt/devkitpro/libctru/include/3ds/allocator/linear.h /opt/devkitpro/libctru/include/3ds/allocator/mappable.h /opt/devkitpro/libctru/include/3ds/allocator/vram.h /opt/devkitpro/libctru/include/3ds/services/ac.h /opt/devkitpro/libctru/include/3ds/services/am.h /opt/devkitpro/libctru/include/3ds/services/fs.h /opt/devkitpro/libctru/include/3ds/services/ampxi.h /opt/devkitpro/libctru/include/3ds/services/apt.h /opt/devkitpro/libctru/include/3ds/services/boss.h /opt/devkitpro/libctru/include/3ds/services/cam.h /opt/devkitpro/libctru/include/3ds/services/y2r.h /opt/devkitpro/libctru/include/3ds/services/cfgnor.h /opt/devkitpro/libctru/include/3ds/services/cfgu.h /opt/devkitpro/libctru/include/3ds/services/csnd.h /opt/devkitpro/libctru/include/3ds/services/dsp.h /opt/devkitpro/libctru/include/3ds/services/fspxi.h /opt/devkitpro/libctru/include/3ds/services/fsreg.h /opt/devkitpro/libctru/include/3ds/services/frd.h /opt/devkitpro/libctru/include/3ds/mii.h /opt/devkitpro/libctru/include/3ds/services/gsplcd.h /opt/devkitpro/libctru/include/3ds/services/hid.h /opt/devkitpro/libctru/include/3ds/services/irrst.h /opt/devkitpro/libctru/include/3ds/services/sslc.h /opt/devkitpro/libctru/include/3ds/services/httpc.h /opt/devkitpro/libctru/include/3ds/services/uds.h /opt/devkitpro/libctru/include/3ds/services/ndm.h /opt/devkitpro/libctru/include/3ds/services/nim.h /opt/devkitpro/libctru/include/3ds/services/nwmext.h /opt/devkitpro/libctru/include/3ds/services/ir.h /opt/devkitpro/libctru/include/3ds/services/ns.h /opt/devkitpro/libctru/include/3ds/services/pmapp.h /opt/devkitpro/libctru/include/3ds/services/pmdbg.h /opt/devkitpro/libctru/include/3ds/services/ps.h /opt/devkitpro/libctru/include/3ds/services/ptmu.h /opt/devkitpro/libctru/include/3ds/services/ptmsysm.h /opt/devkitpro/libctru/include/3ds/services/ptmgets.h /opt/devkitpro/libctru/include/3ds/services/ptmsets.h /opt/devkitpro/libctru/include/3ds/services/pxidev.h /opt/devkitpro/libctru/include/3ds/services/pxipm.h /opt/devkitpro/libctru/include/3ds/services/soc.h /opt/devkitpro/libctru/include/netinet/in.h /opt/devkitpro/libctru/include/sys/socket.h /opt/devkitpro/libctru/include/3ds/services/mic.h /opt/devkitpro/libctru/include/3ds/services/mvd.h /opt/devkitpro/libctru/include/3ds/services/nfc.h /opt/devkitpro/libctru/include/3ds/services/news.h /opt/devkitpro/libctru/include/3ds/services/qtm.h /opt/devkitpro/libctru/include/3ds/services/srvpm.h /opt/devkitpro/libctru/include/3ds/services/loader.h /opt/devkitpro/libctru/include/3ds/services/mcuhwc.h /opt/devkitpro/libctru/include/3ds/gpu/gx.h /opt/devkitpro/libctru/include/3ds/gpu/gpu.h /opt/devkitpro/libctru/include/3ds/gpu/registers.h /opt/devkitpro/libctru/include/3ds/gpu/enums.h /opt/devkitpro/libctru/include/3ds/gpu/shbin.h /opt/devkitpro/libctru/include/3ds/gpu/shaderProgram.h /opt/devkitpro/libctru/include/3ds/ndsp/ndsp.h /opt/devkitpro/libctru/include/3ds/ndsp/channel.h /opt/devkitpro/libctru/include/3ds/applets/swkbd.h /opt/devkitpro/libctru/include/3ds/applets/error.h /opt/devkitpro/libctru/include/3ds/applets/miiselector.h /opt/devkitpro/libctru/include/3ds/archive.h /opt/devkitpro/libctru/include/3ds/romfs.h /opt/devkitpro/libctru/include/3ds/font.h /opt/devkitpro/libctru/include/3ds/gdbhio_dev.h /opt/devkitpro/libctru/include/3ds/3dslink.h /opt/devkitpro/libctru/include/citro2d.h /opt/devkitpro/libctru/include/citro3d.h /opt/devkitpro/libctru/include/c3d/types.h /opt/devkitpro/libctru/include/c3d/maths.h /opt/devkitpro/libctru/include/c3d/mtxstack.h /opt/devkitpro/libctru/include/c3d/uniforms.h /opt/devkitpro/libctru/include/c3d/attribs.h /opt/devkitpro/libctru/include/c3d/buffers.h /opt/devkitpro/libctru/include/c3d/base.h /opt/devkitpro/libctru/include/c3d/texenv.h /opt/devkitpro/libctru/include/c3d/effect.h /opt/devkitpro/libctru/include/c3d/texture.h /opt/devkitpro/libctru/include/c3d/proctex.h /opt/devkitpro/libctru/include/c3d/light.h /opt/devkitpro/libctru/include/c3d/lightlut.h /opt/devkitpro/libctru/include/c3d/fog.h /opt/devkitpro/libctru/include/c3d/framebuffer.h /opt/devkitpro/libctru/include/c3d/renderqueue.h /opt/devkitpro/libctru/include/tex3ds.h /opt/devkitpro/libctru/include/c2d/base.h /opt/devkitpro/libctru/include/c2d/spritesheet.h /opt/devkitpro/libctru/include/c2d/sprite.h /opt/devkitpro/libctru/include/c2d/text.h /opt/devkitpro/libctru/include/c2d/font.h /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/font.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/basics.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/types.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/basics.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/input.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/object.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/types.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/objectdef.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/scene.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/scene.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/scenedef.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/types.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/components.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Components/CursorComponent.cpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/Components/debug.cpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/setup.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/sound.hpp
+# automatic
+# % := 
+# automatic
+# ^ := /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/src/main.cpp cursor_sprites.h eng_debug_menu.h /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Generic /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/preproc.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/basics.hpp /opt/devkitpro/libctru/include/3ds.h /opt/devkitpro/libctru/include/3ds/types.h /opt/devkitpro/libctru/include/3ds/result.h /opt/devkitpro/libctru/include/3ds/ipc.h /opt/devkitpro/libctru/include/3ds/svc.h /opt/devkitpro/libctru/include/3ds/exheader.h /opt/devkitpro/libctru/include/3ds/srv.h /opt/devkitpro/libctru/include/3ds/errf.h /opt/devkitpro/libctru/include/3ds/os.h /opt/devkitpro/libctru/include/3ds/synchronization.h /opt/devkitpro/libctru/include/3ds/thread.h /opt/devkitpro/libctru/include/3ds/gfx.h /opt/devkitpro/libctru/include/3ds/services/gspgpu.h /opt/devkitpro/libctru/include/3ds/console.h /opt/devkitpro/libctru/include/3ds/env.h /opt/devkitpro/libctru/include/3ds/util/decompress.h /opt/devkitpro/libctru/include/3ds/util/utf.h /opt/devkitpro/libctru/include/3ds/allocator/linear.h /opt/devkitpro/libctru/include/3ds/allocator/mappable.h /opt/devkitpro/libctru/include/3ds/allocator/vram.h /opt/devkitpro/libctru/include/3ds/services/ac.h /opt/devkitpro/libctru/include/3ds/services/am.h /opt/devkitpro/libctru/include/3ds/services/fs.h /opt/devkitpro/libctru/include/3ds/services/ampxi.h /opt/devkitpro/libctru/include/3ds/services/apt.h /opt/devkitpro/libctru/include/3ds/services/boss.h /opt/devkitpro/libctru/include/3ds/services/cam.h /opt/devkitpro/libctru/include/3ds/services/y2r.h /opt/devkitpro/libctru/include/3ds/services/cfgnor.h /opt/devkitpro/libctru/include/3ds/services/cfgu.h /opt/devkitpro/libctru/include/3ds/services/csnd.h /opt/devkitpro/libctru/include/3ds/services/dsp.h /opt/devkitpro/libctru/include/3ds/services/fspxi.h /opt/devkitpro/libctru/include/3ds/services/fsreg.h /opt/devkitpro/libctru/include/3ds/services/frd.h /opt/devkitpro/libctru/include/3ds/mii.h /opt/devkitpro/libctru/include/3ds/services/gsplcd.h /opt/devkitpro/libctru/include/3ds/services/hid.h /opt/devkitpro/libctru/include/3ds/services/irrst.h /opt/devkitpro/libctru/include/3ds/services/sslc.h /opt/devkitpro/libctru/include/3ds/services/httpc.h /opt/devkitpro/libctru/include/3ds/services/uds.h /opt/devkitpro/libctru/include/3ds/services/ndm.h /opt/devkitpro/libctru/include/3ds/services/nim.h /opt/devkitpro/libctru/include/3ds/services/nwmext.h /opt/devkitpro/libctru/include/3ds/services/ir.h /opt/devkitpro/libctru/include/3ds/services/ns.h /opt/devkitpro/libctru/include/3ds/services/pmapp.h /opt/devkitpro/libctru/include/3ds/services/pmdbg.h /opt/devkitpro/libctru/include/3ds/services/ps.h /opt/devkitpro/libctru/include/3ds/services/ptmu.h /opt/devkitpro/libctru/include/3ds/services/ptmsysm.h /opt/devkitpro/libctru/include/3ds/services/ptmgets.h /opt/devkitpro/libctru/include/3ds/services/ptmsets.h /opt/devkitpro/libctru/include/3ds/services/pxidev.h /opt/devkitpro/libctru/include/3ds/services/pxipm.h /opt/devkitpro/libctru/include/3ds/services/soc.h /opt/devkitpro/libctru/include/netinet/in.h /opt/devkitpro/libctru/include/sys/socket.h /opt/devkitpro/libctru/include/3ds/services/mic.h /opt/devkitpro/libctru/include/3ds/services/mvd.h /opt/devkitpro/libctru/include/3ds/services/nfc.h /opt/devkitpro/libctru/include/3ds/services/news.h /opt/devkitpro/libctru/include/3ds/services/qtm.h /opt/devkitpro/libctru/include/3ds/services/srvpm.h /opt/devkitpro/libctru/include/3ds/services/loader.h /opt/devkitpro/libctru/include/3ds/services/mcuhwc.h /opt/devkitpro/libctru/include/3ds/gpu/gx.h /opt/devkitpro/libctru/include/3ds/gpu/gpu.h /opt/devkitpro/libctru/include/3ds/gpu/registers.h /opt/devkitpro/libctru/include/3ds/gpu/enums.h /opt/devkitpro/libctru/include/3ds/gpu/shbin.h /opt/devkitpro/libctru/include/3ds/gpu/shaderProgram.h /opt/devkitpro/libctru/include/3ds/ndsp/ndsp.h /opt/devkitpro/libctru/include/3ds/ndsp/channel.h /opt/devkitpro/libctru/include/3ds/applets/swkbd.h /opt/devkitpro/libctru/include/3ds/applets/error.h /opt/devkitpro/libctru/include/3ds/applets/miiselector.h /opt/devkitpro/libctru/include/3ds/archive.h /opt/devkitpro/libctru/include/3ds/romfs.h /opt/devkitpro/libctru/include/3ds/font.h /opt/devkitpro/libctru/include/3ds/gdbhio_dev.h /opt/devkitpro/libctru/include/3ds/3dslink.h /opt/devkitpro/libctru/include/citro2d.h /opt/devkitpro/libctru/include/citro3d.h /opt/devkitpro/libctru/include/c3d/types.h /opt/devkitpro/libctru/include/c3d/maths.h /opt/devkitpro/libctru/include/c3d/mtxstack.h /opt/devkitpro/libctru/include/c3d/uniforms.h /opt/devkitpro/libctru/include/c3d/attribs.h /opt/devkitpro/libctru/include/c3d/buffers.h /opt/devkitpro/libctru/include/c3d/base.h /opt/devkitpro/libctru/include/c3d/texenv.h /opt/devkitpro/libctru/include/c3d/effect.h /opt/devkitpro/libctru/include/c3d/texture.h /opt/devkitpro/libctru/include/c3d/proctex.h /opt/devkitpro/libctru/include/c3d/light.h /opt/devkitpro/libctru/include/c3d/lightlut.h /opt/devkitpro/libctru/include/c3d/fog.h /opt/devkitpro/libctru/include/c3d/framebuffer.h /opt/devkitpro/libctru/include/c3d/renderqueue.h /opt/devkitpro/libctru/include/tex3ds.h /opt/devkitpro/libctru/include/c2d/base.h /opt/devkitpro/libctru/include/c2d/spritesheet.h /opt/devkitpro/libctru/include/c2d/sprite.h /opt/devkitpro/libctru/include/c2d/text.h /opt/devkitpro/libctru/include/c2d/font.h /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/font.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/types.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/input.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/object.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/objectdef.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/scene.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/scenedef.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/components.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Components/CursorComponent.cpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/Components/debug.cpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/setup.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/sound.hpp
+# automatic
+# ? := /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/scene.hpp /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/setup.hpp
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=3/21=14%
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 79):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CXX) -MMD -MP -MF $(DEPSDIR)/$*.d $(CXXFLAGS) -c $< -o $@ $(ERROR_FILTER)
+
+# Not a target:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/eng_debug_menu.t3s:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-26 09:33:31.181259651
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/ndsp/channel.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/citro3d.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-28 15:02:14
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/allocator/vram.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/c3d/proctex.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-28 15:02:14
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/cfgu.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/mii.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/setup.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-29 08:14:28.692566306
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/gdbhio_dev.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/nfc.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/error.png:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/opt/devkitpro/libctru/include/3ds/services/httpc.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+romfs/gfx/cursor_sprites.t3x: /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/objects/cursor/1.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/objects/cursor/2.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/objects/cursor/3.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/objects/cursor/4.png /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/objects/cursor/5.png
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/basics.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-28 16:09:19.155495334
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/gpu/gx.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/empty.png:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/debug.png:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/opt/devkitpro/libctru/include/3ds/services/apt.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+ 
+#  File has been updated.
+#  Successfully updated.
+
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Generic:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-26 09:33:31.181259651
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/console.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/loader.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/opt/devkitpro/libctru/include/3ds/applets/miiselector.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/frd.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/c2d/font.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-28 15:23:34
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/sys/socket.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/soc.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/scene.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-29 12:23:34.558070119
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/netinet/in.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/c2d/spritesheet.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-28 15:23:34
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/gpu/shbin.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/components.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-26 09:33:31.181259651
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/os.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/dsp.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/uds.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/ps.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/stop.png:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/opt/devkitpro/libctru/include/3ds/srv.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/c2d/text.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-28 15:23:34
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/debugpressed.png:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/dbg/console/start.png:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+%.bcfnt:
+#  Precious file (prerequisite of .PRECIOUS).
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/opt/devkitpro/libctru/include/c3d/base.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-28 15:02:14
+#  File has been updated.
+#  Successfully updated.
+
+/opt/devkitpro/libctru/include/3ds/services/ns.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-01-26 15:17:39
+#  File has been updated.
+#  Successfully updated.
+
+# files hash-table stats:
+# Load=168/1024=16%, Rehash=0, Collisions=136/720=19%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# General ('VPATH' variable) search path:
+# /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/src:/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx:/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/data
+
+# strcache buffers: 3 (2) / strings = 583 / storage = 18135 B / avg = 31 B
+# current buf: size = 8162 B / used = 1846 B / count = 74 / avg = 24 B
+# other used: total = 16289 B / count = 509 / avg = 32 B
+# other free: total = 35 B / max = 23 B / min = 12 B / avg = 17 B
+
+# strcache performance: lookups = 1051 / hit rate = 44%
+# hash-table stats:
+# Load=583/8192=7%, Rehash=0, Collisions=49/1051=5%
+# Finished Make data base on Sat Apr 30 07:33:11 2022
+
+# GNU Make 4.3
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Sat Apr 30 07:33:11 2022
+
+# Variables
+
+# makefile (from '/opt/devkitpro/devkitARM/base_rules', line 6)
+PORTLIBS_PATH := /opt/devkitpro/portlibs
+# environment
+GDK_BACKEND = x11
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 23)
+AS := arm-none-eabi-as
+# makefile (from 'Makefile', line 80)
+OUTPUT := /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Rutice
+# environment
+LC_ALL = C
+# environment
+NO_AT_BRIDGE = 1
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 24)
+AR := arm-none-eabi-gcc-ar
+# makefile (from 'Makefile', line 120)
+ROMFS_T3XFILES :=  romfs/gfx/cursor_sprites.t3x  romfs/gfx/eng_debug_menu.t3x
+# environment
+I3SOCK = /tmp/i3-root.5hOug0/ipc-socket.848
+# makefile (from 'Makefile', line 133)
+OFILES :=     main.o  
+# makefile (from 'Makefile', line 121)
+ROMFS_FONTFILES := 
+# environment
+SUDO_UID = 1000
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /tmp/vscode-ipc-357c796c-5254-41dc-a1a0-5dbf1e008264.sock
+# makefile (from 'Makefile', line 83)
+VPATH := /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/src /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/data
+# makefile (from 'Makefile', line 89)
+CFILES := 
+# environment
+VSCODE_CWD = /home/techiesplash
+# environment
+WINDOWPATH = 1
+# makefile (from 'Makefile', line 64)
+LIBS := -lcitro2d -lcitro3d -lctru -lm 
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 43)
+SILENTMSG := @echo
+# environment
+TERMINATOR_UUID = urn:uuid:1a91165a-60a7-4e10-9a45-c8f4deb820e7
+# default
+MAKE_COMMAND := make
+# makefile (from 'Makefile', line 129)
+OFILES_BIN := $(subst ,,   )
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# makefile (from 'Makefile', line 90)
+CPPFILES := main.cpp
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
+# environment
+PWD = /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+MAIL = /var/mail/root
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+VSCODE_LOG_STACK = false
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_CODE_CACHE_PATH = /home/techiesplash/.config/Code - OSS/CachedData/e18005f0f1b33c29e81d732535d8c0e47cafb0b5
+# environment
+LANG = C
+# environment
+XAUTHORITY = /root/.Xauthority
+# default
+.LOADED := 
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# makefile
+MAKEFLAGS = pqrR
+# makefile (from 'Makefile', line 91)
+SFILES := 
+# makefile (from 'Makefile', line 45)
+ICON := icon.png
+# environment
+DEVKITARM = /opt/devkitpro/devkitARM
+# makefile
+CURDIR := /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# makefile (from 'Makefile', line 87)
+DEPSDIR := /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/build
+# environment
+MFLAGS = -pqrR
+# default
+.SHELLFLAGS := -c
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# makefile (from 'Makefile', line 165)
+_3DSXFLAGS = --smdh=$(CURDIR)/$(TARGET).smdh --romfs=$(CURDIR)/$(ROMFS)
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 1)
+MAKEFILE_LIST := Makefile /opt/devkitpro/devkitARM/3ds_rules /opt/devkitpro/devkitARM/base_rules /opt/devkitpro/devkitARM/base_tools
+# makefile (from 'Makefile', line 61)
+ASFLAGS := -g -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft
+# automatic
+@F = $(notdir $@)
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_PID = 1636
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 28)
+RANLIB := arm-none-eabi-gcc-ranlib
+# environment
+DEVKITPPC = /opt/devkitpro/devkitPPC
+# makefile (from 'Makefile', line 135)
+HFILES :=    cursor_sprites.h eng_debug_menu.h
+# makefile (from 'Makefile', line 46)
+APP_AUTHOR := TechieSplash
+# makefile (from 'Makefile', line 38)
+INCLUDES := include
+# automatic
+*F = $(notdir $*)
+# environment
+CHROME_DESKTOP = code-oss.desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = disabled:
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# makefile (from 'Makefile', line 157)
+APP_ICON := /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/icon.png
+# makefile (from '/opt/devkitpro/devkitARM/3ds_rules', line 11)
+CTRULIB = $(DEVKITPRO)/libctru
+# makefile (from 'Makefile', line 139)
+INCLUDE := -I/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include -I/opt/devkitpro/libctru/include -I/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/build
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# makefile
+SHELL = /bin/sh
+# default
+MAKECMDGOALS := all
+# makefile (from 'Makefile', line 127)
+OFILES_SOURCES := main.o  
+# environment
+SHLVL = 3
+# makefile (from 'Makefile', line 96)
+ 
+BINFILES := 
+# environment
+MAKELEVEL := 0
+# makefile (from 'Makefile', line 143)
+LIBPATHS := -L/opt/devkitpro/libctru/lib
+# default
+MAKE = $(MAKE_COMMAND)
+# makefile (from 'Makefile', line 93)
+SHLISTFILES := 
+# makefile (from '/opt/devkitpro/devkitARM/3ds_rules', line 9)
+PATH := /opt/devkitpro/portlibs/3ds/bin:/opt/devkitpro/tools/bin:/opt/devkitpro/devkitARM/bin:/opt/devkitpro/tools/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/home/techiesplash/.dotnet/tools:/home/techiesplash/.local/share/flatpak/exports/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+# default
+MAKEFILES := 
+# automatic
+^F = $(notdir $^)
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 5)
+UNAME_R := 5.15.36-1-lts
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 19)
+PREFIX := arm-none-eabi-
+# makefile (from 'Makefile', line 70)
+LIBDIRS := /opt/devkitpro/libctru
+# environment
+SUDO_GID = 1000
+# environment
+SUDO_COMMAND = /usr/bin/startx
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?F = $(notdir $?)
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 50)
+bin2o = 	bin2s -a 4 -H `(echo $(<F) | tr . _)`.h $< | $(AS) -o $(<F).o
+# environment
+DEVKITPRO = /opt/devkitpro
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 4)
+UNAME_S := Linux
+# automatic
++F = $(notdir $+)
+# makefile (from 'Makefile', line 95)
+FONTFILES := 
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# 'override' directive
+GNUMAKEFLAGS := 
+# makefile (from 'Makefile', line 92)
+PICAFILES := 
+# environment
+LOGNAME = techiesplash
+# makefile
+.DEFAULT_GOAL := all
+# makefile (from 'Makefile', line 51)
+ARCH := -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft
+# makefile (from '/opt/devkitpro/devkitARM/3ds_rules', line 18)
+APP_DESCRIPTION := Built with devkitARM & libctru
+# environment
+DISPLAY = :0
+# environment
+GTK_MODULES = canberra-gtk-module
+# environment
+USER = techiesplash
+# default
+MAKE_VERSION := 4.3
+# 'override' directive
+.SHELLSTATUS := 0
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 44)
+SILENTCMD := @
+# makefile (from 'Makefile', line 35)
+BUILD := build
+# makefile (from 'Makefile', line 81)
+TOPDIR := /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice
+# makefile (from 'Makefile', line 42)
+GFXBUILD := romfs/gfx
+# makefile (from 'Makefile', line 62)
+LDFLAGS = -specs=3dsx.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 30)
+ISVC = $(or $(VCBUILDHELPER_COMMAND),$(MSBUILDEXTENSIONSPATH32),$(MSBUILDEXTENSIONSPATH))
+# environment
+_ = /usr/bin/make
+# makefile (from 'Makefile', line 57)
+CFLAGS := -g -Wall -O2 -mword-relocations -exceptions -ffunction-sections -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft  -D__3DS__
+# environment
+COLORTERM = truecolor
+# environment
+SUDO_USER = techiesplash
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/techiesplash
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 13)
+DEVKITPATH = $(shell echo "$(DEVKITPRO)" | sed -e 's/^\([a-zA-Z]\):/\/\1/')
+# makefile (from '/opt/devkitpro/devkitARM/3ds_rules', line 7)
+PORTLIBS := /opt/devkitpro/portlibs/3ds
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+VSCODE_IPC_HOOK = /home/techiesplash/.config/Code - OSS/1.66.0-main.sock
+# environment
+TERM = xterm-256color
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 27)
+NM := arm-none-eabi-gcc-nm
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# makefile (from 'Makefile', line 94)
+GFXFILES := cursor_sprites.t3s eng_debug_menu.t3s
+# makefile (from 'Makefile', line 41)
+ROMFS := romfs
+# default
+SUFFIXES := 
+# makefile (from 'Makefile', line 34)
+TARGET := Rutice
+# makefile (from 'Makefile', line 107)
+LD := arm-none-eabi-g++
+# environment
+VSCODE_CLI = 1
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+VTE_VERSION = 6800
+# makefile (from 'Makefile', line 59)
+CXXFLAGS := -g -Wall -O2 -mword-relocations -exceptions -ffunction-sections -march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft  -D__3DS__ -std=gnu++11
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 26)
+STRIP := arm-none-eabi-strip
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink guile load
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 22)
+CXX := arm-none-eabi-g++
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 21)
+CC := arm-none-eabi-gcc
+# makefile (from '/opt/devkitpro/devkitARM/base_tools', line 25)
+OBJCOPY := arm-none-eabi-objcopy
+# makefile (from 'Makefile', line 122)
+T3XHFILES :=  build/cursor_sprites.h  build/eng_debug_menu.h
+# makefile (from 'Makefile', line 36)
+SOURCES := src
+# makefile (from 'Makefile', line 44)
+APP_TITLE := RuticeEngine
+# makefile (from 'Makefile', line 37)
+DATA := data
+# makefile (from 'Makefile', line 39)
+GRAPHICS := gfx
+# makefile (from 'Makefile', line 145)
+_3DSXDEPS := /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Rutice.smdh
+# variable set hash-table stats:
+# Load=146/1024=14%, Rehash=0, Collisions=27/339=8%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# src (device 66310, inode 24129049): 3 files, no impossibilities.
+# /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx (device 66310, inode 23465589): 7 files, no impossibilities.
+# . (device 66310, inode 23204151): 18 files, no impossibilities.
+# /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/data: could not be stat'd.
+# data: could not be stat'd.
+# gfx (device 66310, inode 23465589): 7 files, no impossibilities.
+# /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/src (device 66310, inode 24129049): 3 files, no impossibilities.
+
+# 38 files, no impossibilities in 7 directories.
+
+# Implicit Rules
+
+%.a:
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 12):
+	$(SILENTMSG) $(notdir $@)
+	@rm -f $@
+	$(SILENTCMD)$(AR) -rc $@ $^
+
+%.arm.o: %.arm.cpp
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 18):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CXX) -MMD -MP -MF $(DEPSDIR)/$*.arm.d $(CXXFLAGS) -marm -c $< -o $@ $(ERROR_FILTER)
+
+%.arm.o: %.arm.c
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 23):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CC) -MMD -MP -MF $(DEPSDIR)/$*.arm.d $(CFLAGS) -marm -c $< -o $@ $(ERROR_FILTER)
+
+%.arm.o: %.arm.m
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 28):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CC) -MMD -MP -MF $(DEPSDIR)/$*.arm.d $(OBJCFLAGS) -marm -c $< -o $@ $(ERROR_FILTER)
+
+%.thumb.o: %.thumb.cpp
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 33):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CXX) -MMD -MP -MF $(DEPSDIR)/$*.thumb.d $(CXXFLAGS) -mthumb -c $< -o $@ $(ERROR_FILTER)
+
+%.thumb.o: %.thumb.c
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 38):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CC) -MMD -MP -MF $(DEPSDIR)/$*.thumb.d $(CFLAGS) -mthumb -c $< -o $@ $(ERROR_FILTER)
+
+%.thumb.o: %.thumb.m
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 43):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CC) -MMD -MP -MF $(DEPSDIR)/$*.thumb.d $(OBJCFLAGS) -mthumb -c $< -o $@ $(ERROR_FILTER)
+
+%.iwram.o: %.iwram.cpp
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 48):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CXX) -MMD -MP -MF $(DEPSDIR)/$*.iwram.d $(CXXFLAGS) -marm -mlong-calls -c $< -o $@ $(ERROR_FILTER)
+
+%.iwram.o: %.iwram.c
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 53):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CC) -MMD -MP -MF $(DEPSDIR)/$*.iwram.d $(CFLAGS) -marm -mlong-calls -c $< -o $@ $(ERROR_FILTER)
+
+%.iwram.o: %.iwram.m
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 58):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CC) -MMD -MP -MF $(DEPSDIR)/$*.iwram.d $(OBJCFLAGS) -marm -mlong-calls -c $< -o $@ $(ERROR_FILTER)
+
+%.itcm.o: %.itcm.cpp
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 63):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CXX) -MMD -MP -MF $(DEPSDIR)/$*.itcm.d $(CXXFLAGS) -marm -mlong-calls -c $< -o $@ $(ERROR_FILTER)
+
+%.itcm.o: %.itcm.c
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 68):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CC) -MMD -MP -MF $(DEPSDIR)/$*.itcm.d $(CFLAGS) -marm -mlong-calls -c $< -o $@ $(ERROR_FILTER)
+
+%.itcm.o: %.itcm.m
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 73):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CC) -MMD -MP -MF $(DEPSDIR)/$*.itcm.d $(OBJCFLAGS) -marm -mlong-calls -c $< -o $@ $(ERROR_FILTER)
+
+%.o: %.cpp
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 79):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CXX) -MMD -MP -MF $(DEPSDIR)/$*.d $(CXXFLAGS) -c $< -o $@ $(ERROR_FILTER)
+
+%.o: %.c
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 84):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CC) -MMD -MP -MF $(DEPSDIR)/$*.d $(CFLAGS) -c $< -o $@ $(ERROR_FILTER)
+
+%.o: %.m
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 89):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CC) -MMD -MP -MF $(DEPSDIR)/$*.d $(OBJCFLAGS) -c $< -o $@ $(ERROR_FILTER)
+
+%.o: %.s
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 94):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CC) -MMD -MP -MF $(DEPSDIR)/$*.d -x assembler-with-cpp $(ASFLAGS) -c $< -o $@ $(ERROR_FILTER)
+
+%.o: %.S
+#  recipe to execute (from '/opt/devkitpro/devkitARM/base_rules', line 99):
+	$(SILENTMSG) $(notdir $<)
+	$(SILENTCMD)$(CC) -MMD -MP -MF $(DEPSDIR)/$*.d -x assembler-with-cpp $(ASFLAGS) -c $< -o $@ $(ERROR_FILTER)
+
+%.smdh: /opt/devkitpro/libctru/default_icon.png Makefile /opt/devkitpro/devkitARM/3ds_rules /opt/devkitpro/devkitARM/base_rules /opt/devkitpro/devkitARM/base_tools
+#  recipe to execute (from '/opt/devkitpro/devkitARM/3ds_rules', line 31):
+	$(SILENTCMD)smdhtool --create "$(APP_TITLE)" "$(APP_DESCRIPTION)" "$(APP_AUTHOR)" $(APP_ICON) $@
+	$(SILENTMSG) built ... $(notdir $@)
+
+%.3dsx: %.elf
+#  recipe to execute (from '/opt/devkitpro/devkitARM/3ds_rules', line 36):
+	$(SILENTCMD)3dsxtool $< $@ $(_3DSXFLAGS)
+	$(SILENTMSG) built ... $(notdir $@)
+
+%.elf:
+#  recipe to execute (from '/opt/devkitpro/devkitARM/3ds_rules', line 41):
+	$(SILENTMSG) linking $(notdir $@)
+	$(SILENTCMD)$(LD) $(LDFLAGS) $(OFILES) $(LIBPATHS) $(LIBS) -o $@
+	$(SILENTCMD)$(NM) -CSn $@ > $(notdir $*.lst)
+
+romfs/gfx/%.t3x build/%.h: %.t3s
+#  recipe to execute (from 'Makefile', line 195):
+	@echo $(notdir $<)
+	@tex3ds -i $< -H $(BUILD)/$*.h -d $(DEPSDIR)/$*.d -o $(GFXBUILD)/$*.t3x
+
+romfs/gfx/%.bcfnt: %.ttf
+#  recipe to execute (from 'Makefile', line 201):
+	@echo $(notdir $<)
+	@mkbcfnt -o $(GFXBUILD)/$*.bcfnt $<
+
+# 23 implicit rules, 0 (0.0%) terminal.
+ 
+# Files
+
+build/eng_debug_menu.h: /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/eng_debug_menu.t3s
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'eng_debug_menu'
+#  Also makes: romfs/gfx/eng_debug_menu.t3x
+#  Last modified 2022-04-26 11:01:35.559829108
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 195):
+	@echo $(notdir $<)
+	@tex3ds -i $< -H $(BUILD)/$*.h -d $(DEPSDIR)/$*.d -o $(GFXBUILD)/$*.t3x
+
+build/cursor_sprites.h: /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/cursor_sprites.t3s
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'cursor_sprites'
+#  Also makes: romfs/gfx/cursor_sprites.t3x
+#  Last modified 2022-04-26 11:01:35.43983145
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 195):
+	@echo $(notdir $<)
+	@tex3ds -i $< -H $(BUILD)/$*.h -d $(DEPSDIR)/$*.d -o $(GFXBUILD)/$*.t3x
+
+# Not a target:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/cursor_sprites.t3s:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-26 09:33:31.181259651
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+/opt/devkitpro/devkitARM/base_tools:
+#  Implicit rule search has been done.
+#  Last modified 2020-07-27 19:27:14
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-26 09:33:31.181259651
+#  File has been updated.
+#  Successfully updated.
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 189):
+	@echo clean ...
+	@rm -fr $(BUILD) $(TARGET).3dsx $(OUTPUT).smdh $(TARGET).elf $(GFXBUILD)
+
+# Not a target:
+/opt/devkitpro/devkitARM/base_rules:
+#  Implicit rule search has been done.
+#  Last modified 2020-07-27 19:27:14
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+/opt/devkitpro/devkitARM/3ds_rules:
+#  Implicit rule search has been done.
+#  Last modified 2020-07-27 19:27:14
+#  File has been updated.
+#  Successfully updated.
+
+romfs/gfx/eng_debug_menu.t3x: /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/eng_debug_menu.t3s
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'eng_debug_menu'
+#  Also makes: build/eng_debug_menu.h
+#  Last modified 2022-04-26 11:01:35.559829108
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 195):
+	@echo $(notdir $<)
+	@tex3ds -i $< -H $(BUILD)/$*.h -d $(DEPSDIR)/$*.d -o $(GFXBUILD)/$*.t3x
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all: build romfs/gfx /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/build romfs/gfx/cursor_sprites.t3x romfs/gfx/eng_debug_menu.t3x build/cursor_sprites.h build/eng_debug_menu.h
+#  Phony target (prerequisite of .PHONY).
+#  Command line target.
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := all
+# automatic
+# * := 
+# automatic
+# < := build
+# automatic
+# + := build romfs/gfx /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/build romfs/gfx/cursor_sprites.t3x romfs/gfx/eng_debug_menu.t3x build/cursor_sprites.h build/eng_debug_menu.h
+# automatic
+# % := 
+# automatic
+# ^ := build romfs/gfx /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/build romfs/gfx/cursor_sprites.t3x romfs/gfx/eng_debug_menu.t3x build/cursor_sprites.h build/eng_debug_menu.h
+# automatic
+# ? := build romfs/gfx /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/build romfs/gfx/cursor_sprites.t3x romfs/gfx/eng_debug_menu.t3x build/cursor_sprites.h build/eng_debug_menu.h
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=2/19=11%
+#  recipe to execute (from 'Makefile', line 172):
+	@$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
+
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/build:
+#  Implicit rule search has not been done.
+#  Last modified 2022-04-28 16:10:44.243780399
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 184):
+	@mkdir -p $@
+
+build:
+#  Implicit rule search has not been done.
+#  Last modified 2022-04-28 16:10:44.243780399
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 175):
+	@mkdir -p $@
+
+romfs/gfx:
+#  Implicit rule search has not been done.
+#  Last modified 2022-04-26 09:33:31.181259651
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 179):
+	@mkdir -p $@
+
+# Not a target:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/eng_debug_menu.t3s:
+#  Implicit rule search has been done.
+#  Last modified 2022-04-26 09:33:31.181259651
+#  File has been updated.
+#  Successfully updated.
+
+romfs/gfx/cursor_sprites.t3x: /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx/cursor_sprites.t3s
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'cursor_sprites'
+#  Also makes: build/cursor_sprites.h
+#  Last modified 2022-04-26 11:01:35.43983145
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 195):
+	@echo $(notdir $<)
+	@tex3ds -i $< -H $(BUILD)/$*.h -d $(DEPSDIR)/$*.d -o $(GFXBUILD)/$*.t3x
+
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.PHONY: all clean
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=18/1024=2%, Rehash=0, Collisions=0/102=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# General ('VPATH' variable) search path:
+# /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/src:/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/gfx:/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/data
+
+# strcache buffers: 1 (0) / strings = 81 / storage = 1259 B / avg = 15 B
+# current buf: size = 8162 B / used = 1259 B / count = 81 / avg = 15 B
+
+# strcache performance: lookups = 150 / hit rate = 46%
+# hash-table stats:
+# Load=81/8192=1%, Rehash=0, Collisions=10/150=7%
+# Finished Make data base on Sat Apr 30 07:33:11 2022
+
+ 

@@ -11,9 +11,15 @@ C3D_RenderTarget *Render_bottom;
 int updateRate = 0;
 double secondsUpdateRate;
 
+
+
 class Scene
 {
+    
 public:
+    string sceneName;
+
+   // ivect2 cameraPosition = {0, 0};
     Scene();
     ~Scene();
 
@@ -101,5 +107,7 @@ private:
 };
 
 Scene *activeScene;
+
+
 
 #endif
