@@ -1,0 +1,97 @@
+Date : 2022-05-01 22:45:18
+Directory : c:\Users\super\OneDrive\Documents\Rutice\Rutice
+Total : 43 files,  146 codes, 23 comments, 49 blanks, all 218 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| C++      |         39 |        146 |         23 |         49 |        218 |
+| Markdown |          2 |          0 |          0 |          0 |          0 |
+| Makefile |          2 |          0 |          0 |          0 |          0 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                      | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                         |         43 |        146 |         23 |         49 |        218 |
+| ..                                                                                                        |         20 |     -1,778 |       -245 |       -355 |     -2,378 |
+| ..\..                                                                                                     |         20 |     -1,778 |       -245 |       -355 |     -2,378 |
+| ..\..\..                                                                                                  |         20 |     -1,778 |       -245 |       -355 |     -2,378 |
+| ..\..\..\..                                                                                               |         20 |     -1,778 |       -245 |       -355 |     -2,378 |
+| ..\..\..\..\..                                                                                            |         20 |     -1,778 |       -245 |       -355 |     -2,378 |
+| ..\..\..\..\..\..                                                                                         |         20 |     -1,778 |       -245 |       -355 |     -2,378 |
+| ..\..\..\..\..\..\home                                                                                    |         20 |     -1,778 |       -245 |       -355 |     -2,378 |
+| ..\..\..\..\..\..\home\techiesplash                                                                       |         20 |     -1,778 |       -245 |       -355 |     -2,378 |
+| ..\..\..\..\..\..\home\techiesplash\Documents                                                             |         20 |     -1,778 |       -245 |       -355 |     -2,378 |
+| ..\..\..\..\..\..\home\techiesplash\Documents\projects                                                    |         20 |     -1,778 |       -245 |       -355 |     -2,378 |
+| ..\..\..\..\..\..\home\techiesplash\Documents\projects\adv                                                |         20 |     -1,778 |       -245 |       -355 |     -2,378 |
+| ..\..\..\..\..\..\home\techiesplash\Documents\projects\adv\3ds                                            |         20 |     -1,778 |       -245 |       -355 |     -2,378 |
+| ..\..\..\..\..\..\home\techiesplash\Documents\projects\adv\3ds\engine                                     |         20 |     -1,778 |       -245 |       -355 |     -2,378 |
+| ..\..\..\..\..\..\home\techiesplash\Documents\projects\adv\3ds\engine\Rutice                              |         20 |     -1,778 |       -245 |       -355 |     -2,378 |
+| ..\..\..\..\..\..\home\techiesplash\Documents\projects\adv\3ds\engine\Rutice\build                        |          2 |        -21 |         -2 |         -4 |        -27 |
+| ..\..\..\..\..\..\home\techiesplash\Documents\projects\adv\3ds\engine\Rutice\include                      |         15 |     -1,472 |       -132 |       -254 |     -1,858 |
+| ..\..\..\..\..\..\home\techiesplash\Documents\projects\adv\3ds\engine\Rutice\include\Rutice               |         15 |     -1,472 |       -132 |       -254 |     -1,858 |
+| ..\..\..\..\..\..\home\techiesplash\Documents\projects\adv\3ds\engine\Rutice\include\Rutice\Components    |          1 |        -21 |         -2 |         -4 |        -27 |
+| ..\..\..\..\..\..\home\techiesplash\Documents\projects\adv\3ds\engine\Rutice\include\Rutice\Internal      |         14 |     -1,451 |       -130 |       -250 |     -1,831 |
+| ..\..\..\..\..\..\home\techiesplash\Documents\projects\adv\3ds\engine\Rutice\include\Rutice\Internal\Components |          1 |       -672 |        -40 |        -68 |       -780 |
+| ..\..\..\..\..\..\home\techiesplash\Documents\projects\adv\3ds\engine\Rutice\src                          |          1 |       -134 |        -32 |        -43 |       -209 |
+| build                                                                                                     |          2 |         21 |          2 |          4 |         27 |
+| include                                                                                                   |         18 |      1,618 |        154 |        302 |      2,074 |
+| include\Rutice                                                                                            |         18 |      1,618 |        154 |        302 |      2,074 |
+| include\Rutice\Components                                                                                 |          1 |         23 |          2 |          3 |         28 |
+| include\Rutice\Internal                                                                                   |         17 |      1,595 |        152 |        299 |      2,046 |
+| include\Rutice\Internal\Components                                                                        |          1 |        603 |         34 |         61 |        698 |
+| src                                                                                                       |          1 |        134 |         33 |         44 |        211 |
++-----------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                                  | language | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| \home\techiesplash\Documents\projects\adv\3ds\engine\Rutice\Makefile                                      | Makefile |       -149 |        -79 |        -53 |       -281 |
+| \home\techiesplash\Documents\projects\adv\3ds\engine\Rutice\README.md                                     | Markdown |         -2 |          0 |         -1 |         -3 |
+| \home\techiesplash\Documents\projects\adv\3ds\engine\Rutice\build\cursor_sprites.h                        | C++      |         -6 |         -1 |         -2 |         -9 |
+| \home\techiesplash\Documents\projects\adv\3ds\engine\Rutice\build\eng_debug_menu.h                        | C++      |        -15 |         -1 |         -2 |        -18 |
+| \home\techiesplash\Documents\projects\adv\3ds\engine\Rutice\include\Rutice\Components\CursorComponent.cpp | C++      |        -21 |         -2 |         -4 |        -27 |
+| \home\techiesplash\Documents\projects\adv\3ds\engine\Rutice\include\Rutice\Internal\Components\debug.cpp  | C++      |       -672 |        -40 |        -68 |       -780 |
+| \home\techiesplash\Documents\projects\adv\3ds\engine\Rutice\include\Rutice\Internal\basics.hpp            | C++      |        -21 |         -2 |         -3 |        -26 |
+| \home\techiesplash\Documents\projects\adv\3ds\engine\Rutice\include\Rutice\Internal\components.hpp        | C++      |         -3 |          0 |         -1 |         -4 |
+| \home\techiesplash\Documents\projects\adv\3ds\engine\Rutice\include\Rutice\Internal\data.hpp              | C++      |       -197 |        -48 |        -20 |       -265 |
+| \home\techiesplash\Documents\projects\adv\3ds\engine\Rutice\include\Rutice\Internal\font.hpp              | C++      |        -29 |          0 |         -7 |        -36 |
+| \home\techiesplash\Documents\projects\adv\3ds\engine\Rutice\include\Rutice\Internal\input.hpp             | C++      |        -14 |          0 |         -3 |        -17 |
+| \home\techiesplash\Documents\projects\adv\3ds\engine\Rutice\include\Rutice\Internal\object.hpp            | C++      |       -106 |        -17 |        -44 |       -167 |
+| \home\techiesplash\Documents\projects\adv\3ds\engine\Rutice\include\Rutice\Internal\objectdef.hpp         | C++      |       -155 |         -3 |        -32 |       -190 |
+| \home\techiesplash\Documents\projects\adv\3ds\engine\Rutice\include\Rutice\Internal\preproc.hpp           | C++      |         -8 |          0 |         -3 |        -11 |
+| \home\techiesplash\Documents\projects\adv\3ds\engine\Rutice\include\Rutice\Internal\scene.hpp             | C++      |        -72 |        -14 |        -27 |       -113 |
+| \home\techiesplash\Documents\projects\adv\3ds\engine\Rutice\include\Rutice\Internal\scenedef.hpp          | C++      |        -60 |         -2 |        -13 |        -75 |
+| \home\techiesplash\Documents\projects\adv\3ds\engine\Rutice\include\Rutice\Internal\setup.hpp             | C++      |        -38 |          0 |        -14 |        -52 |
+| \home\techiesplash\Documents\projects\adv\3ds\engine\Rutice\include\Rutice\Internal\sound.hpp             | C++      |        -26 |         -1 |         -3 |        -30 |
+| \home\techiesplash\Documents\projects\adv\3ds\engine\Rutice\include\Rutice\Internal\types.hpp             | C++      |        -50 |         -3 |        -12 |        -65 |
+| \home\techiesplash\Documents\projects\adv\3ds\engine\Rutice\src\main.cpp                                  | C++      |       -134 |        -32 |        -43 |       -209 |
+| c:\Users\super\OneDrive\Documents\Rutice\Rutice\Makefile                                                  | Makefile |        149 |         79 |         53 |        281 |
+| c:\Users\super\OneDrive\Documents\Rutice\Rutice\README.md                                                 | Markdown |          2 |          0 |          1 |          3 |
+| c:\Users\super\OneDrive\Documents\Rutice\Rutice\build\cursor_sprites.h                                    | C++      |          6 |          1 |          2 |          9 |
+| c:\Users\super\OneDrive\Documents\Rutice\Rutice\build\eng_debug_menu.h                                    | C++      |         15 |          1 |          2 |         18 |
+| c:\Users\super\OneDrive\Documents\Rutice\Rutice\include\Rutice\Components\CursorComponent.cpp             | C++      |         23 |          2 |          3 |         28 |
+| c:\Users\super\OneDrive\Documents\Rutice\Rutice\include\Rutice\Internal\Components\debug.cpp              | C++      |        603 |         34 |         61 |        698 |
+| c:\Users\super\OneDrive\Documents\Rutice\Rutice\include\Rutice\Internal\basics.hpp                        | C++      |         21 |          2 |          3 |         26 |
+| c:\Users\super\OneDrive\Documents\Rutice\Rutice\include\Rutice\Internal\components.hpp                    | C++      |          3 |          0 |          1 |          4 |
+| c:\Users\super\OneDrive\Documents\Rutice\Rutice\include\Rutice\Internal\data.hpp                          | C++      |        270 |         61 |         46 |        377 |
+| c:\Users\super\OneDrive\Documents\Rutice\Rutice\include\Rutice\Internal\debug.hpp                         | C++      |         72 |          6 |          8 |         86 |
+| c:\Users\super\OneDrive\Documents\Rutice\Rutice\include\Rutice\Internal\font.hpp                          | C++      |         29 |          0 |          7 |         36 |
+| c:\Users\super\OneDrive\Documents\Rutice\Rutice\include\Rutice\Internal\input.hpp                         | C++      |         14 |          0 |          3 |         17 |
+| c:\Users\super\OneDrive\Documents\Rutice\Rutice\include\Rutice\Internal\object.hpp                        | C++      |        106 |         17 |         44 |        167 |
+| c:\Users\super\OneDrive\Documents\Rutice\Rutice\include\Rutice\Internal\objectdef.hpp                     | C++      |        155 |          3 |         32 |        190 |
+| c:\Users\super\OneDrive\Documents\Rutice\Rutice\include\Rutice\Internal\preproc.hpp                       | C++      |          8 |          0 |          3 |         11 |
+| c:\Users\super\OneDrive\Documents\Rutice\Rutice\include\Rutice\Internal\scene.hpp                         | C++      |         72 |         14 |         27 |        113 |
+| c:\Users\super\OneDrive\Documents\Rutice\Rutice\include\Rutice\Internal\scenedef.hpp                      | C++      |         60 |          2 |         13 |         75 |
+| c:\Users\super\OneDrive\Documents\Rutice\Rutice\include\Rutice\Internal\setup.hpp                         | C++      |         38 |          0 |         14 |         52 |
+| c:\Users\super\OneDrive\Documents\Rutice\Rutice\include\Rutice\Internal\sound.hpp                         | C++      |         26 |          1 |          3 |         30 |
+| c:\Users\super\OneDrive\Documents\Rutice\Rutice\include\Rutice\Internal\sprites.hpp                       | C++      |         66 |          9 |         20 |         95 |
+| c:\Users\super\OneDrive\Documents\Rutice\Rutice\include\Rutice\Internal\tilemap.hpp                       | C++      |          2 |          0 |          2 |          4 |
+| c:\Users\super\OneDrive\Documents\Rutice\Rutice\include\Rutice\Internal\types.hpp                         | C++      |         50 |          3 |         12 |         65 |
+| c:\Users\super\OneDrive\Documents\Rutice\Rutice\src\main.cpp                                              | C++      |        134 |         33 |         44 |        211 |
+| Total                                                                                                     |          |        146 |         23 |         49 |        218 |
++-----------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
