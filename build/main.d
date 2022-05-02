@@ -122,11 +122,12 @@ main.o: \
  /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/scene.hpp \
  /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/scenedef.hpp \
  /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/types.hpp \
+ /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/debug.hpp \
+ /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/sound.hpp \
+ /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/data.hpp \
  /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/components.hpp \
  /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Components/CursorComponent.cpp \
- /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/Components/debug.cpp \
- /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/sound.hpp \
- /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/data.hpp
+ /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/Components/debug.cpp
 /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Generic:
 /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/preproc.hpp:
 /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/basics.hpp:
@@ -249,8 +250,9 @@ main.o: \
 /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/scene.hpp:
 /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/scenedef.hpp:
 /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/types.hpp:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/debug.hpp:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/sound.hpp:
+/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/data.hpp:
 /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/components.hpp:
 /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Components/CursorComponent.cpp:
 /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/Components/debug.cpp:
-/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/sound.hpp:
-/home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/data.hpp:

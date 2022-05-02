@@ -4,6 +4,15 @@
 #include <string>
 #include <stdio.h>
 #include <unistd.h>
+#include <Rutice/Internal/components.hpp>
+using namespace debugConsole;
+
+typedef struct
+{
+    string name;
+    float varfloat;
+    string varstring;
+} InterpObjectData;
 
 /// Load a GameObject's attributes from a function list, with a string id.
 /// GameObject data can be defined within this list.
@@ -53,10 +62,44 @@ void loadGameObjectAttr(string id, GameObject *gameObject)
 
 namespace data
 {
-    namespace dotscene
+    InterpObjectData getObjectData(string id, std::vector<InterpObjectData> &dataSet)
     {
+        InterpObjectData outdata;
+        outdata.varfloat = 0;
+        outdata.varstring = "";
+        outdata.name = "";
+
+        for (int i = 0; i < (int)dataSet.size(); i++)
+        {
+            if (dataSet[i].name == id)
+            {
+                return dataSet[i];
+            }
+        }
+        return outdata;
+    }
+
+    void setObjectData(InterpObjectData dataIn, std::vector<InterpObjectData> &dataSet)
+    {
+        for (int i = 0; i < (int)dataSet.size(); i++)
+        {
+            if (dataSet[i].name == dataIn.name)
+            {
+                dataSet[i].varstring = dataIn.varstring;
+                dataSet[i].varfloat = dataIn.varfloat;
+            }
+        }
+        dataSet.push_back(dataIn);
+    }
+    class omlInterpreter
+    {
+
         bool l1 = false;
+
+        // Filesystem things
         FILE *file;
+
+    public:
         void openFile(string path)
         {
             file = fopen(path.c_str(), "r");
@@ -67,130 +110,199 @@ namespace data
             fclose(file);
         }
 
-        Scene *loadSceneData(string sceneName)
+        // Actually interpreting the data
+        std::vector<std::vector<InterpObjectData>> getSectionData(string section)
         {
-            debug::Log("Loading scene '" + sceneName + "' data from file.\n");
+            // Interp flags
+            bool varNoClear = false;
+            bool allowDefaults = true;
+
+            // Output
+            std::vector<std::vector<InterpObjectData>> tempParent;
+            std::vector<InterpObjectData> tempChild;
+            std::vector<InterpObjectData> defaults;
+
+            //
             bool inScope = false;
-            Scene *tempScene = new Scene();
+
             if (!file)
             {
-                warn::Log("Attempted to load scene data without a file.\n");
-                return tempScene;
+                warn::Log("Attempted to interpret a non-existent file.");
+                return tempParent;
             }
 
-            string sheet = "romfs:/gfx/notex.t3x";
-            string id = "Empty";
-            string name = "GameObject";
-            fvect3 pos = {0, 0, 0};
-            bool screen = false;
-            int16_t index = 0;
-            char buf[100];
+            char buf[256];
             while (fgets(buf, sizeof(buf), file)) // do until EOF
             {
                 string str2(buf);
-                debug::Log(str2 + "\n");
+               // debug::Log(str2 + "\n");
 
                 std::string str1(buf);
                 std::vector<string> split = splitString(str1 + " ", ' ', 9999);
+                if(split.size() >= 1)
+                {
+                    split[split.size() - 1].erase(std::remove(split[split.size() - 1].begin(), split[split.size() - 1].end(), '\n'), split[split.size() - 1].end());
+                   
+                }
                 int splitSize = split.size();
                 //  debug::Log("splitSize=" + std::to_string(splitSize) + "\n");
                 // Scope
-                if (splitSize == 2)
+
+                if (split[0] == "@section")
                 {
-                    if (split[0] == "@scene")
-                    {
-                        //  debug::Log(split[1]);
-                        if (split[1] == sceneName + "\n")
-                        {
 
-                            debug::Log("Entered scene location\n");
-                            inScope = true;
-                        }
-                        else
-                        {
-                            inScope = false;
-                        }
+                    if (split[1] == section)
+                    {
+               //         debug::Log("Entered scope.");
+                        inScope = true;
                     }
-                    else if (split[0] == "@sprites")
+                    else if (inScope == true)
                     {
-                        //   debug::Log(split[1]);
 
-                        sheet = split[1];
+                   //     debug::Log("Exited scope.");
+                        inScope = false;
+                        return tempParent;
+                    }
+                    if (!varNoClear)
+                    {
+                        tempChild.clear();
+                    }
+
+                    if (allowDefaults)
+                    {
+                        for (int i = 0; i < (int)defaults.size(); i++)
+                        {
+                            data::setObjectData(defaults[i], tempChild);
+                        }
                     }
                 }
 
                 if (inScope)
                 {
-                    // debug::Log("In scope.\n");
-                    //  In the scope, check for objects to create.
-                    if (split[0] == "@pushobj\n")
+
+                    // Finish the data for this object and move on to the next
+                    if (split[0] == "@submit")
                     {
-                        debug::Log("Pushing object");
-                        if (screen == false)
-                        {
-                            GameObject &gameObject0 = tempScene->Create(sheet, Render_top, {pos.x, pos.y, pos.z}, name, index);
-                            loadGameObjectAttr(id, &gameObject0);
-                        }
-                        else
-                        {
-                            GameObject &gameObject0 = tempScene->Create(sheet, Render_bottom, {pos.x, pos.y, pos.z}, name, index);
-                            loadGameObjectAttr(id, &gameObject0);
-                        }
-                        id = "Empty";
-                        name = "GameObject";
-                        pos = {0, 0, 0};
-                        screen = false;
-                        index = 0;
+                        tempParent.push_back(tempChild);
+
+                        // Reset variables
                     }
-                    // Use the $var signs for setting variables on created objects.
+
+                    // Read general data
                     if (splitSize >= 3)
                     {
-                        if (split[0] == "$var")
+                        if (split[0] == "@flag")
                         {
-                            debug::Log("'$var' identified.");
-                            if (split[1] == "id")
-                            {
 
-                                id = split[2];
-                                debug::Log(split[2]);
-                            }
-                            if (split[1] == "name\n")
-                            {
+                            // Get boolean value
+                            bool valid = true;
+                            bool value = false;
 
-                                name = split[2];
-                            }
-                            if (split[1] == "screen")
+                            if (split[2] == "false")
                             {
-                                if (split[2] == "false\n")
-                                {
-                                    screen = false;
-                                }
-                                else if (split[2] == "true\n")
-                                {
-                                    screen = true;
-                                }
+                                value = false;
                             }
-                            if (split[1] == "index")
+                            else if (split[2] == "true")
                             {
-                                index = std::stoi(split[2]);
+                                value = true;
                             }
+                            else
+                            {
+                                valid = false;
+                            }
+
+                            if (valid)
+                            {
+                                if (split[1] == "noclear")
+                                {
+                                    varNoClear = value;
+                                }
+                                else if (split[1] == "allowdefaults")
+                                {
+                                    allowDefaults = value;
+                                }
+                            }
+                        }
+
+                        // String Variable data
+                        if (split[0] == "$svar")
+                        {
+                            InterpObjectData temp1;
+                            temp1.name = split[1];
+                            temp1.varstring = split[2];
+                            temp1.varfloat = 0;
+                            setObjectData(temp1, tempChild);
+                        }
+
+                        // Floating-point Variable data
+                        if (split[0] == "$fvar")
+                        {
+                            InterpObjectData temp1;
+                            temp1.name = split[1];
+                            temp1.varstring = "";
+                            temp1.varfloat = std::stof(split[2]);
+                            setObjectData(temp1, tempChild);
+                        }
+
+                        // String Defaults data
+                        if (split[0] == "$sdef")
+                        {
+                            InterpObjectData temp1;
+                            temp1.name = split[1];
+                            temp1.varstring = split[2];
+                            temp1.varfloat = 0;
+                            setObjectData(temp1, defaults);
+                        }
+
+                        // Floating-point Defaults data
+                        if (split[0] == "$fdef")
+                        {
+                            InterpObjectData temp1;
+                            temp1.name = split[1];
+                            temp1.varstring = "";
+                            temp1.varfloat = std::stof(split[2]);
+                            setObjectData(temp1, defaults);
                         }
                     }
                 }
             }
-            return tempScene;
+            return tempParent;
         }
-
-    }
+    };
 }
 
 Scene *loadSceneUnstable(string id)
 {
 
+    Scene *temp = new Scene();
+
     // debug::Log("(UNSTABLE) Loading scene '" + id + "'.\n");
-    data::dotscene::openFile("romfs:/data/scene/sceneExample.scene");
-    Scene *temp = data::dotscene::loadSceneData(id);
-    data::dotscene::closeFile();
+    data::omlInterpreter interpreter;
+    interpreter.openFile("romfs:/data/scene/sceneExample.oml");
+
+    std::vector<std::vector<InterpObjectData>> data = interpreter.getSectionData(id);
+
+    for (int i = 0; i < (int)data.size(); i++)
+    {
+
+        // GameObject &gameObject = temp->Create("romfs:/gfx/cursor_sprites.t3x", Render_top, {0, 0, 0}, "Cursor", 0);
+        // loadGameObjectAttr("cursorObject", &gameObject);
+        debug::Log(data::getObjectData("screen", data[i]).varstring);
+        if (data::getObjectData("screen", data[i]).varstring == "false")
+        {
+
+            GameObject &gameObject = temp->Create(data::getObjectData("sheet", data[i]).varstring, Render_top, {data::getObjectData("posx", data[i]).varfloat, data::getObjectData("posy", data[i]).varfloat, data::getObjectData("posz", data[i]).varfloat}, data::getObjectData("name", data[i]).varstring, (int)data::getObjectData("index", data[i]).varfloat);
+            loadGameObjectAttr(data::getObjectData("id", data[i]).varstring, &gameObject);
+        }
+        else
+        {
+            GameObject &gameObject = temp->Create(data::getObjectData("sheet", data[i]).varstring, Render_bottom, {data::getObjectData("posx", data[i]).varfloat, data::getObjectData("posy", data[i]).varfloat, data::getObjectData("posz", data[i]).varfloat}, data::getObjectData("name", data[i]).varstring, (int)data::getObjectData("index", data[i]).varfloat);
+            loadGameObjectAttr(data::getObjectData("id", data[i]).varstring, &gameObject);
+        }
+    }
+
+    interpreter.closeFile();
+
     // bool foundScene = false;
 
     /*

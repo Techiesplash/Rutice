@@ -1,0 +1,53 @@
+Date : 2022-05-01 13:37:22
+Directory : /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice
+Total : 20 files,  1778 codes, 245 comments, 355 blanks, all 2378 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| C++      |         18 |      1,627 |        166 |        301 |      2,094 |
+| Makefile |          1 |        149 |         79 |         53 |        281 |
+| Markdown |          1 |          2 |          0 |          1 |          3 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                      | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                         |         20 |      1,778 |        245 |        355 |      2,378 |
+| build                                                                                                     |          2 |         21 |          2 |          4 |         27 |
+| include                                                                                                   |         15 |      1,472 |        132 |        254 |      1,858 |
+| include/Rutice                                                                                            |         15 |      1,472 |        132 |        254 |      1,858 |
+| include/Rutice/Components                                                                                 |          1 |         21 |          2 |          4 |         27 |
+| include/Rutice/Internal                                                                                   |         14 |      1,451 |        130 |        250 |      1,831 |
+| include/Rutice/Internal/Components                                                                        |          1 |        672 |         40 |         68 |        780 |
+| src                                                                                                       |          1 |        134 |         32 |         43 |        209 |
++-----------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                                  | language | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/Makefile                                      | Makefile |        149 |         79 |         53 |        281 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/README.md                                     | Markdown |          2 |          0 |          1 |          3 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/build/cursor_sprites.h                        | C++      |          6 |          1 |          2 |          9 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/build/eng_debug_menu.h                        | C++      |         15 |          1 |          2 |         18 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Components/CursorComponent.cpp | C++      |         21 |          2 |          4 |         27 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/Components/debug.cpp  | C++      |        672 |         40 |         68 |        780 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/basics.hpp            | C++      |         21 |          2 |          3 |         26 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/components.hpp        | C++      |          3 |          0 |          1 |          4 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/data.hpp              | C++      |        197 |         48 |         20 |        265 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/font.hpp              | C++      |         29 |          0 |          7 |         36 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/input.hpp             | C++      |         14 |          0 |          3 |         17 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/object.hpp            | C++      |        106 |         17 |         44 |        167 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/objectdef.hpp         | C++      |        155 |          3 |         32 |        190 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/preproc.hpp           | C++      |          8 |          0 |          3 |         11 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/scene.hpp             | C++      |         72 |         14 |         27 |        113 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/scenedef.hpp          | C++      |         60 |          2 |         13 |         75 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/setup.hpp             | C++      |         38 |          0 |         14 |         52 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/sound.hpp             | C++      |         26 |          1 |          3 |         30 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/types.hpp             | C++      |         50 |          3 |         12 |         65 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/src/main.cpp                                  | C++      |        134 |         32 |         43 |        209 |
+| Total                                                                                                     |          |      1,778 |        245 |        355 |      2,378 |
++-----------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+

@@ -1,5 +1,6 @@
+#pragma once
 #include <Rutice/Generic>
-
+#include <Rutice/Internal/Components/debug.cpp>
 namespace components
 {
 

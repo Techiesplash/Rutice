@@ -9,5 +9,5 @@
 #include "Internal/scene.hpp"
 #include "Internal/scenedef.hpp"
 #include "Internal/types.hpp"
-#include "Internal/components.hpp"
-using namespace debugConsole;
+#include "Internal/debug.hpp"
+#include "Internal/debug.hpp"

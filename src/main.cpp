@@ -4,7 +4,7 @@
 
 extern "C" void critical_signal_handler(int signal_number)
 {
-	
+	consoleInit(GFX_BOTTOM, NULL);
 	// Identify what signal it is
 	string temp = "UNKNOWN";
 	string desc = "No description available.";
@@ -96,8 +96,10 @@ int main()
 
 	Render_top = C2D_CreateScreenTarget(GFX_TOP, GFX_LEFT);
 	Render_bottom = C2D_CreateScreenTarget(GFX_BOTTOM, GFX_RIGHT);
-	Scene *scene = loadSceneUnstable("testing");
 
+
+    Scene *scene = loadSceneUnstable("testing");
+    
 	Scene *consoleScene = loadScene("debugConsole", Render_bottom);
 	printf("Console initialized.");
 //	printf("GPLv3 3DS Engine - 'Rutice'\nSprite-based engine for Nintendo 3DS\n");
@@ -177,7 +179,7 @@ int main()
 		C2D_TargetClear(Render_bottom, C2D_Color32f(0.1f, 0.1f, 0.1f, 1.0f));
 		C2D_SceneBegin(Render_bottom);
 
-		scene->Render(Render_bottom);
+	//	scene->Render(Render_bottom);
 		consoleScene->Render(Render_bottom);
 
 		// C2D_Text temp;

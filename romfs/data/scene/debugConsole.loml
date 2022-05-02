@@ -1,0 +1,31 @@
+@section debugConsole
+# Defaults
+$sdef sheet romfs:/gfx/eng_debug_menu.t3x
+$sdef posz 0
+$sdef screen true
+
+$svar sheet romfs:/gfx/eng_debug_menu.t3x
+$svar id consoleDebug_textHandlerObject
+$fvar posx 0
+$fvar posy 224 
+$svar screen true
+$svar name consoleDebug_textHandler
+@submit
+$var id consoleDebug_debugLogButton
+$fvar posx 16
+$fvar posy 224 
+$svar name consoleDebug_debugButton
+@submit
+$svar id consoleDebug_warnLogButton
+$fvar posx 32 
+$fvar posy 224 
+$svar name consoleDebug_warnButton
+@submit
+$svar id consoleDebug_errorLogButton
+$fvar posx 48
+$fvar posy 224 
+$svar name consoleDebug_errorButton
+@submit
+$svar id cursorObject
+$svar name CursorBottom
+@submit

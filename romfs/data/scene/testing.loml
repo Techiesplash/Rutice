@@ -1,0 +1,6 @@
+@section testing
+$svar sheet romfs:/gfx/cursor_sprites.t3x
+$svar id cursorObject
+$svar name CursorTop
+$svar screen false
+@submit
