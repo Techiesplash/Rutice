@@ -48,26 +48,26 @@ APP_AUTHOR  :=  TechieSplash
 #---------------------------------------------------------------------------------
 # options for code generation
 #---------------------------------------------------------------------------------
-ARCH	:=	-march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft
+ARCH	:=	-march=armv6k -mtune=mpcore -mfloat-abi=hard -mtp=soft 
 
 CFLAGS	:=	-g -Wall -O2 -mword-relocations -exceptions \
 			-ffunction-sections \
 			$(ARCH)
 
-CFLAGS	+=	$(INCLUDE) -D__3DS__
+CFLAGS	+=	$(INCLUDE) -D__3DS__ -DAARCH64 -w -fpermissive
 
 CXXFLAGS	:= $(CFLAGS) -std=gnu++11
 
 ASFLAGS	:=	-g $(ARCH)
 LDFLAGS	=	-specs=3dsx.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
 
-LIBS	:= -lcitro2d -lcitro3d -lctru -lm 
+LIBS	:=  -lcitro2d -lcitro3d -lctru -lm -lsupc++ 
 
 #---------------------------------------------------------------------------------
 # list of directories containing libraries, this must be the top level containing
 # include and lib
 #---------------------------------------------------------------------------------
-LIBDIRS	:= $(CTRULIB)
+LIBDIRS	:= $(CTRULIB) /usr/local/bin/ /usr/bin/
 
 
 #---------------------------------------------------------------------------------

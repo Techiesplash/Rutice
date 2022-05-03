@@ -14,6 +14,7 @@ typedef struct
     string varstring;
 } InterpObjectData;
 
+
 /// Load a GameObject's attributes from a function list, with a string id.
 /// GameObject data can be defined within this list.
 void loadGameObjectAttr(string id, GameObject *gameObject)
@@ -24,14 +25,14 @@ void loadGameObjectAttr(string id, GameObject *gameObject)
         if (id == "cursorObject")
         {
             gameObject->addComponent<components::CursorComponent>();
-            gameObject->animation.frameTimer = 5;
-            gameObject->animation.ids = {0, 1, 2, 3, 4, 3, 2, 1, 0, 0};
+        //    gameObject->animation.frameTimer = 5;
+        //    gameObject->animation.ids = {0, 1, 2, 3, 4, 3, 2, 1, 0, 0};
         }
         // Debug console
         else if (id == "consoleDebug_textHandlerObject")
         {
 
-            components::debugInternal::debugConsole_textObject = gameObject;
+     
             components::debugInternal::consoleFont = C2D_FontLoadSystem(CFG_REGION_USA);
             gameObject->addComponent<components::debugInternal::debugConsole_TextHandlerComponent>();
             gameObject->addComponent<components::debugInternal::debugConsole_ToggleDebugComponent>();
@@ -132,7 +133,7 @@ namespace data
             }
 
             char buf[256];
-            while (fgets(buf, sizeof(buf), file)) // do until EOF
+            while (fgets(buf, sizeof(256), file)) // do until EOF
             {
                 string str2(buf);
                // debug::Log(str2 + "\n");
@@ -278,7 +279,7 @@ Scene *loadSceneUnstable(string id)
 
     // debug::Log("(UNSTABLE) Loading scene '" + id + "'.\n");
     data::omlInterpreter interpreter;
-    interpreter.openFile("romfs:/data/scene/sceneExample.oml");
+    interpreter.openFile("romfs:/data/scene/testing.loml");
 
     std::vector<std::vector<InterpObjectData>> data = interpreter.getSectionData(id);
 
@@ -347,24 +348,24 @@ Scene *loadScene(string id, C3D_RenderTarget *target)
     Scene *temp = new Scene();
     if (id == "testing")
     {
-        GameObject &gameObject = temp->Create("romfs:/gfx/cursor_sprites.t3x", Render_top, {0, 0, 0}, "Cursor", 0);
+        GameObject &gameObject = temp->Create("cursor_sprites", Render_top, {0, 0, 0}, "Cursor", 0);
         loadGameObjectAttr("cursorObject", &gameObject);
     }
     else if (id == "debugConsole")
     {
         // Text handler / hide button
-        GameObject &gameObject0 = temp->Create("romfs:/gfx/eng_debug_menu.t3x", Render_bottom, {0, 224, 0}, "consoleDebug_textHandler", 0);
+        GameObject &gameObject0 = temp->Create("eng_debug_menu", Render_bottom, {0, 224, 0}, "consoleDebug_textHandler", 0);
         loadGameObjectAttr("consoleDebug_textHandlerObject", &gameObject0);
 
         // Log buttons
-        GameObject &gameObject1 = temp->Create("romfs:/gfx/eng_debug_menu.t3x", Render_bottom, {16, 224, 0}, "consoleDebug_debugButton", 1);
+        GameObject &gameObject1 = temp->Create("eng_debug_menu", Render_bottom, {16, 224, 0}, "consoleDebug_debugButton", 1);
         loadGameObjectAttr("consoleDebug_debugLogButton", &gameObject1);
-        GameObject &gameObject2 = temp->Create("romfs:/gfx/eng_debug_menu.t3x", Render_bottom, {32, 224, 0}, "consoleDebug_warningButton", 2);
+        GameObject &gameObject2 = temp->Create("eng_debug_menu", Render_bottom, {32, 224, 0}, "consoleDebug_warningButton", 2);
         loadGameObjectAttr("consoleDebug_warnLogButton", &gameObject2);
-        GameObject &gameObject3 = temp->Create("romfs:/gfx/eng_debug_menu.t3x", Render_bottom, {48, 224, 0}, "consoleDebug_errorButton", 3);
+        GameObject &gameObject3 = temp->Create("eng_debug_menu", Render_bottom, {48, 224, 0}, "consoleDebug_errorButton", 3);
         loadGameObjectAttr("consoleDebug_errorLogButton", &gameObject3);
         // Cursor
-        GameObject &gameObject = temp->Create("romfs:/gfx/cursor_sprites.t3x", Render_bottom, {0, 0, 0}, "Debug Cursor", 0);
+        GameObject &gameObject = temp->Create("cursor_sprites", Render_bottom, {0, 0, 0}, "Debug Cursor", 0);
         loadGameObjectAttr("cursorObject", &gameObject);
     }
     else

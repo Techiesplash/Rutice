@@ -1,8 +1,9 @@
-#ifndef _H_SCENE_I_HPP_
-#define _H_SCENE_I_HPP_
+#pragma once
 
 #include "basics.hpp"
 #include "types.hpp"
+
+//#include <Rutice/Generic>
 
 ivect2 Render_cameraPosition = {0, 0};
 C3D_RenderTarget *Render_top;
@@ -110,4 +111,3 @@ Scene *activeScene;
 
 
 
-#endif

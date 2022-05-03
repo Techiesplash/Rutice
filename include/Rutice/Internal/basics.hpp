@@ -1,5 +1,3 @@
-#ifndef _H_LIBRARIES_HPP_
-#define _H_LIBRARIES_HPP_
 
 // Definitions
 #define MAX_SPRITES 1024
@@ -12,7 +10,8 @@
 #include <string.h>
 #include <3ds.h>
 #include <citro2d.h>
-#include <citro3d.h>
+#include <3ds/os.h>
+
 #include <assert.h>
 #include <string.h>
 #include <time.h>
@@ -24,4 +23,3 @@
 #include <algorithm>
 #include <signal.h>
 
-#endif

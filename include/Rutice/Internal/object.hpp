@@ -1,8 +1,9 @@
-#ifndef _H_OBJECT_I_HPP_
-#define _H_OBJECT_I_HPP_
+#pragma once
+
 
 #include "basics.hpp"
 #include "types.hpp"
+#include <Rutice/Internal/sprites.hpp>
 
 touchPosition touch;
 
@@ -76,10 +77,14 @@ public:
 
     bool removeTag(string tag);
 
+    
+
     // Variables used internally
-    C2D_Sprite activeTexture;
+    SpriteAsset textureAsset;
     std::vector<string> tags;
     string name;
+
+    
 
     /// The position of the GameObject, in three-dimensional space.
     fvect3 position;
@@ -90,7 +95,9 @@ public:
     /// the scale of the GameObject, in two-dimensional space.
     fvect2 scale;
 
-    Anim animation;
+   
+
+    void DrawSelf();
 
     C3D_RenderTarget *target;
 
@@ -164,4 +171,3 @@ public:
     virtual ~Component() {}
 };
 
-#endif

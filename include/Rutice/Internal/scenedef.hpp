@@ -1,4 +1,8 @@
+#pragma once
+
 #include <Rutice/Internal/scene.hpp>
+//#include <Rutice/Internal/sprites.hpp>
+#include <Rutice/Generic>
 
 Scene::Scene()
 {
@@ -6,6 +10,10 @@ Scene::Scene()
 
 Scene::~Scene()
 {
+    for (auto &o : entities)
+    {
+        o->Event_Destroy();
+    }
 }
 
 void Scene::Tick()
@@ -57,8 +65,8 @@ void Scene::Render(C3D_RenderTarget *target)
         o->Event_Draw();
         if (o->target == target && o->visible)
         {
-            o->Handle_Anim();  
-            C2D_DrawSprite(&o->activeTexture);
+            o->Handle_Anim();
+            o->DrawSelf();
         }
     }
 }

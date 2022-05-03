@@ -1,0 +1,120 @@
+Date : 2022-05-03 14:49:24
+Directory : /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice
+Total : 84 files,  -32253 codes, -9693 comments, -4721 blanks, all -46667 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| C++      |         53 |     -8,007 |     -4,569 |     -1,424 |    -14,000 |
+| C        |         31 |    -24,246 |     -5,124 |     -3,297 |    -32,667 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                             | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                                |         84 |    -32,253 |     -9,693 |     -4,721 |    -46,667 |
+| build                                                                                                                            |          3 |         23 |          3 |          6 |         32 |
+| include                                                                                                                          |         80 |    -32,263 |     -9,711 |     -4,737 |    -46,711 |
+| include/Rutice                                                                                                                   |         80 |    -32,263 |     -9,711 |     -4,737 |    -46,711 |
+| include/Rutice/Internal                                                                                                          |         80 |    -32,263 |     -9,711 |     -4,737 |    -46,711 |
+| include/Rutice/Internal/gc                                                                                                       |          5 |        298 |         48 |         85 |        431 |
+| include/Rutice/Internal/libs                                                                                                     |         71 |    -32,567 |     -9,760 |     -4,819 |    -47,146 |
+| include/Rutice/Internal/libs/gc                                                                                                  |         71 |    -32,567 |     -9,760 |     -4,819 |    -47,146 |
+| include/Rutice/Internal/libs/gc/include                                                                                          |         71 |    -32,567 |     -9,760 |     -4,819 |    -47,146 |
+| include/Rutice/Internal/libs/gc/include/gc                                                                                       |         18 |     -2,473 |     -2,364 |       -653 |     -5,490 |
+| include/Rutice/Internal/libs/gc/include/private                                                                                  |         14 |     -5,676 |     -2,082 |       -749 |     -8,507 |
+| src                                                                                                                              |          1 |        -13 |         15 |         10 |         12 |
++----------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                                                         | language | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/build/cursor_sprites.h                                               | C++      |          6 |          1 |          2 |          9 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/build/eng_debug_menu.h                                               | C++      |         15 |          1 |          2 |         18 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/build/missingTexture.h                                               | C++      |          2 |          1 |          2 |          5 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/basics.hpp                                   | C++      |          1 |          0 |          0 |          1 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/gc/Generation.cpp                            | C++      |         41 |          7 |         16 |         64 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/gc/Generation.hpp                            | C++      |         34 |         14 |          9 |         57 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/gc/config.hpp                                | C++      |          8 |          0 |          1 |          9 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/gc/gc.cpp                                    | C++      |        130 |         10 |         32 |        172 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/gc/gc.hpp                                    | C++      |         85 |         17 |         27 |        129 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/allchblk.c                   | C        |       -694 |       -201 |        -95 |       -990 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/alloc.c                      | C        |     -1,301 |       -270 |       -205 |     -1,776 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/backgraph.c                  | C        |       -400 |       -102 |        -60 |       -562 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/blacklst.c                   | C        |       -199 |        -70 |        -35 |       -304 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/checksums.c                  | C        |       -134 |        -17 |        -28 |       -179 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/config.h                     | C++      |        -45 |       -144 |        -88 |       -277 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/darwin_stop_world.c          | C        |       -588 |        -99 |        -84 |       -771 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/dbg_mlc.c                    | C        |     -1,001 |       -111 |       -120 |     -1,232 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/dyn_load.c                   | C        |     -1,160 |       -258 |       -171 |     -1,589 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/finalize.c                   | C        |     -1,090 |       -178 |       -138 |     -1,406 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/fnlz_mlc.c                   | C        |        -68 |        -29 |        -16 |       -113 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/gc.h                         | C++      |         -1 |         -1 |         -1 |         -3 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/gc/cord.h                    | C++      |        -98 |       -221 |        -60 |       -379 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/gc/cord_pos.h                | C++      |        -54 |        -49 |        -26 |       -129 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/gc/ec.h                      | C++      |        -29 |        -46 |        -15 |        -90 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/gc/gc.h                      | C++      |       -825 |     -1,134 |       -221 |     -2,180 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/gc/gc_allocator.h            | C++      |       -227 |        -60 |        -55 |       -342 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/gc/gc_backptr.h              | C++      |        -27 |        -58 |        -13 |        -98 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/gc/gc_config_macros.h        | C++      |       -353 |        -60 |        -46 |       -459 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/gc/gc_cpp.h                  | C++      |       -341 |       -164 |        -60 |       -565 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/gc/gc_disclaim.h             | C++      |        -22 |        -41 |        -12 |        -75 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/gc/gc_gcj.h                  | C++      |        -33 |        -61 |        -17 |       -111 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/gc/gc_inline.h               | C++      |       -126 |        -61 |        -22 |       -209 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/gc/gc_mark.h                 | C++      |       -120 |       -175 |        -36 |       -331 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/gc/gc_pthread_redirects.h    | C++      |        -73 |        -31 |        -21 |       -125 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/gc/gc_tiny_fl.h              | C++      |        -29 |        -54 |         -8 |        -91 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/gc/gc_typed.h                | C++      |        -44 |        -63 |        -16 |       -123 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/gc/gc_version.h              | C++      |        -16 |        -26 |         -6 |        -48 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/gc/javaxfc.h                 | C++      |        -21 |        -37 |         -8 |        -66 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/gc/leak_detector.h           | C++      |        -35 |        -23 |        -11 |        -69 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/gc_badalc.cc                 | C++      |        -17 |        -15 |         -8 |        -40 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/gc_badalc.cpp                | C++      |         -1 |         -1 |         -1 |         -3 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/gc_cpp.cc                    | C++      |        -85 |        -27 |        -20 |       -132 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/gc_cpp.cpp                   | C++      |         -1 |         -1 |         -1 |         -3 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/gc_cpp.h                     | C++      |         -1 |         -1 |         -1 |         -3 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/gc_dlopen.c                  | C        |        -51 |        -40 |        -12 |       -103 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/gcdeps.hpp                   | C++      |        -21 |          0 |          0 |        -21 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/gcj_mlc.c                    | C        |       -189 |        -57 |        -23 |       -269 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/headers.c                    | C        |       -324 |        -60 |        -43 |       -427 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/mach_dep.c                   | C        |       -352 |        -67 |        -49 |       -468 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/malloc.c                     | C        |       -530 |       -108 |        -66 |       -704 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/mallocx.c                    | C        |       -466 |       -118 |        -55 |       -639 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/mark.c                       | C        |     -1,519 |       -362 |       -180 |     -2,061 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/mark_rts.c                   | C        |       -679 |       -189 |        -90 |       -958 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/misc.c                       | C        |     -2,114 |       -288 |       -287 |     -2,689 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/new_hblk.c                   | C        |       -118 |        -51 |        -24 |       -193 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/obj_map.c                    | C        |        -57 |        -23 |        -12 |        -92 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/os_dep.c                     | C        |     -4,054 |       -765 |       -554 |     -5,373 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/private/darwin_semaphore.h   | C++      |        -57 |        -20 |        -12 |        -89 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/private/darwin_stop_world.h  | C++      |        -27 |        -16 |        -11 |        -54 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/private/dbg_mlc.h            | C++      |        -97 |        -70 |        -16 |       -183 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/private/gc_alloc_ptrs.h      | C++      |        -28 |        -21 |        -12 |        -61 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/private/gc_atomic_ops.h      | C++      |        -77 |        -24 |        -23 |       -124 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/private/gc_hdrs.h            | C++      |       -124 |        -63 |        -30 |       -217 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/private/gc_locks.h           | C++      |       -216 |        -57 |        -16 |       -289 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/private/gc_pmark.h           | C++      |       -285 |       -132 |        -49 |       -466 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/private/gc_priv.h            | C++      |     -1,906 |       -885 |       -315 |     -3,106 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/private/gcconfig.h           | C++      |     -2,554 |       -594 |       -180 |     -3,328 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/private/pthread_stop_world.h | C++      |        -25 |        -30 |         -9 |        -64 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/private/pthread_support.h    | C++      |        -98 |        -61 |        -32 |       -191 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/private/specific.h           | C++      |        -60 |        -52 |        -22 |       -134 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/private/thread_local_alloc.h | C++      |       -122 |        -57 |        -22 |       -201 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/pthread_start.c              | C        |        -30 |        -34 |         -8 |        -72 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/pthread_stop_world.c         | C        |     -1,098 |       -203 |       -135 |     -1,436 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/pthread_support.c            | C        |     -1,956 |       -411 |       -247 |     -2,614 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/ptr_chck.c                   | C        |       -204 |        -56 |        -22 |       -282 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/reclaim.c                    | C        |       -618 |       -141 |        -95 |       -854 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/specific.c                   | C        |       -118 |        -55 |        -17 |       -190 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/thread_local_alloc.c         | C        |       -201 |        -80 |        -31 |       -312 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/typd_mlc.c                   | C        |       -526 |       -114 |        -57 |       -697 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/libs/gc/include/win32_threads.c              | C        |     -2,407 |       -567 |       -338 |     -3,312 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/objectdef.hpp                                | C++      |          4 |          0 |         -4 |          0 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/scenedef.hpp                                 | C++      |          4 |          0 |          0 |          4 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/include/Rutice/Internal/sprites.hpp                                  | C++      |         -3 |          1 |          1 |         -1 |
+| /home/techiesplash/Documents/projects/adv/3ds/engine/Rutice/src/main.cpp                                                         | C++      |        -13 |         15 |         10 |         12 |
+| Total                                                                                                                            |          |    -32,253 |     -9,693 |     -4,721 |    -46,667 |
++----------------------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+

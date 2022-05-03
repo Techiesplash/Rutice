@@ -1,80 +1,11 @@
 #pragma once
 #include <Rutice/Generic>
 
-namespace debugConsole
-{
-    int linereturnDist = 42;
-    namespace error
-    {
-        void Log(string str1)
-        {
-            string str = str1 + "\n";
-            printf("\033[1;31m%s\n\033[31m", str.c_str());
-            std::vector<string> tempSVector = splitString(str + '\n', '\n', linereturnDist);
-            for (auto &v : tempSVector)
-            {
-
-                components::debugInternal::errorLog.push_back(v);
-                if ((int)components::debugInternal::errorLog.size() > components::debugInternal::maxLineHistory)
-                {
-                    components::debugInternal::errorLog.erase(components::debugInternal::errorLog.begin());
-                }
-                else
-                {
-                    components::debugInternal::error_maxLogPosition++;
-                }
-            }
-            components::debugInternal::debugLog.push_back(" ");
-        }
-    }
-    namespace warn
-    {
-        
-        void Log(string str1)
-        {
-            string str = str1 + "\n";
-            printf("\033[1;33m%s\n\033[31m", str.c_str());
-            std::vector<string> tempSVector = splitString(str + '\n', '\n', linereturnDist);
-            for (auto &v : tempSVector)
-            {
-
-                components::debugInternal::warnLog.push_back(v);
-                if ((int)components::debugInternal::warnLog.size() > components::debugInternal::maxLineHistory)
-                {
-                    components::debugInternal::warnLog.erase(components::debugInternal::warnLog.begin());
-                }
-                else
-                {
-                    components::debugInternal::warn_maxLogPosition++;
-                }
-            }
-            components::debugInternal::debugLog.push_back(" ");
-        }
-    }
-    namespace debug
-    {
-        void Log(string str1)
-        {
-            string str = str1 + "\n";
-            printf(str.c_str());
-            std::vector<string> tempSVector = splitString(str + '\n', '\n', linereturnDist);
-            for (auto &v : tempSVector)
-            {
-                components::debugInternal::debugLog.push_back(v);
-                if ((int)components::debugInternal::debugLog.size() > components::debugInternal::maxLineHistory)
-                {
-                    components::debugInternal::debugLog.erase(components::debugInternal::debugLog.begin());
-                }
-                else
-                {
-                    components::debugInternal::debug_maxLogPosition++;
-                }
-            }
-            components::debugInternal::debugLog.push_back(" ");
-        }
-    }
-}
-
+/*
+#include <Rutice/Internal/basics.hpp>
+#include <Rutice/Internal/sprites.hpp>
+#include <Rutice/Internal/object.hpp>
+*/
 namespace components
 {
     namespace debugInternal
@@ -230,6 +161,7 @@ namespace components
                 this->object->touchBoundary[1].x = 16;
                 this->object->touchBoundary[1].y = 16;
                 this->object->touchable = true;
+                this->object->textureAsset.enableAnim = false;
             }
 
             void update() override
@@ -276,6 +208,7 @@ namespace components
                 this->object->touchBoundary[1].x = 16;
                 this->object->touchBoundary[1].y = 16;
                 this->object->touchable = true;
+                this->object->textureAsset.enableAnim = false;
             }
 
             void update() override
@@ -322,6 +255,7 @@ namespace components
                 this->object->touchBoundary[1].x = 16;
                 this->object->touchBoundary[1].y = 16;
                 this->object->touchable = true;
+                this->object->textureAsset.enableAnim = false;
             }
 
             void update() override

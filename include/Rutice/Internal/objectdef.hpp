@@ -1,14 +1,15 @@
+#pragma once
 #include <Rutice/Generic>
 #include <Rutice/Internal/scene.hpp>
+#include <Rutice/Internal/sprites.hpp>
 
 GameObject::GameObject(string texture, C3D_RenderTarget *rendererObject, fvect3 pos, string name, int index)
 {
     target = rendererObject;
-    texturePath = texture;
+    // texturePath = texture;
 
-    
-    textures = C2D_SpriteSheetLoad((const char *)texture.c_str());
-    
+    // textures = C2D_SpriteSheetLoad((const char *)texture.c_str());
+
     if (!textures)
     {
         printf("object.cpp [ GameObject::GameObject() ] :\n Error loading texturesheet %s\n", texture.c_str());
@@ -16,16 +17,18 @@ GameObject::GameObject(string texture, C3D_RenderTarget *rendererObject, fvect3 
 
     position = pos;
 
-    C2D_SpriteFromSheet(&activeTexture, textures, index);
+    textureAsset.loadSprite(texture);
 
     name = name;
-
-    textureIndex = index;
 }
 
 GameObject::~GameObject()
 {
-    C2D_SpriteSheetFree(textures);
+}
+
+void GameObject::DrawSelf()
+{
+    graphics::drawSprite(textureAsset, -1, position.x, position.y);
 }
 
 // Events
@@ -85,7 +88,11 @@ void GameObject::Event_Destroy()
     if (state == DEAD)
     {
         for (auto &c : components)
+        {
             c->onDelete();
+            delete &c;
+        }
+        delete this;
     }
 }
 
@@ -139,30 +146,6 @@ void GameObject::Event_Draw()
 
 void GameObject::Handle_Anim()
 {
-    if (!animation.ids.empty())
-    {
-        if (animation.frameCount > animation.frameTimer)
-        {
-            animation.frameCount = 0;
-        }
-        else if (animation.frameCount == animation.frameTimer)
-        {
-            animation.index++;
-            if (animation.index == animation.ids.size())
-            {
-                animation.index = 0;
-            }
-            C2D_SpriteFromSheet(&activeTexture, textures, animation.ids[animation.index]);
-            animation.frameCount++;
-        }
-        else
-        {
-            animation.frameCount++;
-        }
-    }
-    
-    // Move the texture to the correct position
-    C2D_SpriteSetPos(&activeTexture, position.x + Render_cameraPosition.x, position.y + Render_cameraPosition.y);
 }
 
 ENTITY_STATE GameObject::GetState()
@@ -172,16 +155,6 @@ ENTITY_STATE GameObject::GetState()
 
 void GameObject::reloadTextures()
 {
-
-    C2D_SpriteSheetFree(textures);
-
-    textures = C2D_SpriteSheetLoad((const char *)texturePath.c_str());
-    if (!textures)
-    {
-        printf("object.cpp [ GameObject::reloadTextures() ] :\n Error loading texturesheet %s\n", texturePath.c_str());
-    }
-
-    C2D_SpriteFromSheet(&activeTexture, textures, textureIndex);
 }
 
 void GameObject::Kill()
