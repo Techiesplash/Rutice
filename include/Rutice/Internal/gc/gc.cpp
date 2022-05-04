@@ -8,25 +8,17 @@
 
 using namespace std;
 
-void *operator new(const size_t sz, void **pVoid)
-{
-    return GC::GarbageCollector::operator new(sz, pVoid);
-}
-
 namespace GC{
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
-void *allocate(size_t size, void **pVoid)
-		{
-			return operator new(size, pVoid);
-		}
+
 
 std::vector<void **> GarbageCollector::_PointersOnStack;
 std::vector<unsigned int> GarbageCollector::_SizeOfObjects;
 std::vector<Generation *> GarbageCollector::_Generations;
 int GarbageCollector::BytesAllocated = 0;
-
+int GarbageCollector::ptrCount = 0;
 extern int g_Count;
 
 void *GarbageCollector::operator new(size_t Size, void **pStackPtr)

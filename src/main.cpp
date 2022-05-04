@@ -7,9 +7,11 @@
 
 //#include <Rutice/Internal/libs/gc/include/gcdeps.hpp>
 //#include <gc.h>
-extern "C" void critical_signal_handler(int signal_number)
+
+
+extern "C" void signal_handler(int signal_number)
 {
-    
+
     consoleInit(GFX_BOTTOM, NULL);
     // Identify what signal it is
     string temp = "UNKNOWN";
@@ -18,10 +20,10 @@ extern "C" void critical_signal_handler(int signal_number)
     {
     case SIGABRT:
         temp = "SIGABRT";
-        desc = "Signal 6 ( SIGABRT ) - Abort Signal";
+        
     case SIGSEGV:
         temp = "SIGSEGV";
-        desc = "Signal 11 ( SIGSEGV ) - Segmentation Fault";
+        
         break;
     default:
         temp = "UNKNOWN";
@@ -33,7 +35,6 @@ extern "C" void critical_signal_handler(int signal_number)
     // consoleClear();
     printf("\n\n----[ Termination Signal ]");
     printf("\nSignal number %i ( %s ) raised. ", signal_number, temp.c_str());
-    printf("\n\n----[ Description ]\n%s\n", desc.c_str());
     printf("\n\n Press START to exit.\n");
 
     // ?????
@@ -74,13 +75,11 @@ int main()
 {
     debugConsole::debug::Log("MIT LICENSED 3DS Engine - 'Rutice'\nSprite-based engine for Nintendo 3DS\n");
 
-    
-
     //	debug::Log("data.Internal.checkForTag returned " + std::to_string(data::Internal::checkForTag("<tag>fadsfasf</tag>","tag1")));
 
     // Abort handling
-    signal(SIGABRT, &critical_signal_handler);
-    signal(SIGSEGV, &critical_signal_handler);
+    signal(SIGABRT, &signal_handler);
+    signal(SIGSEGV, &signal_handler);
     // signal(SIGSTOP, &critical_signal_handler);
     //	signal(SIGQUIT, &critical_signal_handler);
 
@@ -93,36 +92,34 @@ int main()
     C2D_Init(C2D_DEFAULT_MAX_OBJECTS);
     C2D_Prepare();
     cfguInit();
-    csndInit();
+   // csndInit();
     Text::init();
     srvInit();
     aptInit();
     hidInit();
     consoleInit(GFX_BOTTOM, NULL);
-    gdbHioDevInit();
-    
+   // gdbHioDevInit();
+
     Render_top = C2D_CreateScreenTarget(GFX_TOP, GFX_LEFT);
     Render_bottom = C2D_CreateScreenTarget(GFX_BOTTOM, GFX_RIGHT);
 
-    Scene *scene = loadSceneUnstable("testing");
+    //Scene *scene = loadSceneUnstable("testing");
 
-    //Scene *consoleScene = loadScene("debugConsole", Render_bottom);
+    // Scene *consoleScene = loadScene("debugConsole", Render_bottom);
     printf("Console initialized.");
     //	printf("GPLv3 3DS Engine - 'Rutice'\nSprite-based engine for Nintendo 3DS\n");
 
     updateRate = 0;
-    
+
     // Main loop
     while (aptMainLoop())
     {
-     //   printf("\x1b[36m");
-    //    	printf("\x1b[36m\x1b[2;1HCPU:     %6.2f%%\x1b[K\x1b[0m", C3D_GetProcessingTime() * 6.0f);
-    //    	printf("\x1b[36m\x1b[3;1HGPU:     %6.2f%%\x1b[K\x1b[0m", C3D_GetDrawingTime() * 6.0f);
-    //    	printf("\x1b[36m\x1b[4;1HCmdBuf:  %6.2f%%\x1b[K\x1b[0m", C3D_GetCmdBufUsage() * 100.0f);
-    //    	printf("\x1b[0m");
+        //   printf("\x1b[36m");
+        //    	printf("\x1b[36m\x1b[2;1HCPU:     %6.2f%%\x1b[K\x1b[0m", C3D_GetProcessingTime() * 6.0f);
+        //    	printf("\x1b[36m\x1b[3;1HGPU:     %6.2f%%\x1b[K\x1b[0m", C3D_GetDrawingTime() * 6.0f);
+        //    	printf("\x1b[36m\x1b[4;1HCmdBuf:  %6.2f%%\x1b[K\x1b[0m", C3D_GetCmdBufUsage() * 100.0f);
+        //    	printf("\x1b[0m");
         graphics::Internal::Tick();
-
-        	
 
         C2D_TextBufClear(Text::dynamicBuf);
         // gspWaitForVBlank();
@@ -166,25 +163,25 @@ int main()
         }
 
         // Events
-        scene->Tick();
-   //     consoleScene->Tick();
-        
+    //    scene->Tick();
+        //     consoleScene->Tick();
+
         // Top screen
         C3D_FrameBegin(C3D_FRAME_SYNCDRAW);
         C2D_TargetClear(Render_top, C2D_Color32f(0.1f, 0.1f, 0.1f, 1.0f));
         C2D_SceneBegin(Render_top);
-        
-        scene->Render(Render_top);
+
+      //  scene->Render(Render_top);
 
         C3D_FrameEnd(0);
-     
+
         // Bottom screen
-    //    C3D_FrameBegin(C3D_FRAME_SYNCDRAW);
-      //  C2D_TargetClear(Render_bottom, C2D_Color32f(0.1f, 0.1f, 0.1f, 1.0f));
-    //    C2D_SceneBegin(Render_bottom);
+        //    C3D_FrameBegin(C3D_FRAME_SYNCDRAW);
+        //  C2D_TargetClear(Render_bottom, C2D_Color32f(0.1f, 0.1f, 0.1f, 1.0f));
+        //    C2D_SceneBegin(Render_bottom);
 
         //	scene->Render(Render_bottom);
-    //    consoleScene->Render(Render_bottom);
+        //    consoleScene->Render(Render_bottom);
 
         // C2D_Text temp;
 
@@ -193,22 +190,27 @@ int main()
         // C2D_DrawText(&temp, C2D_WithColor, 1, 1, 1, 0.5f, 0.5f, C2D_Color32f(1.0f, 1.0f, 1.0f, 1.0f));
 
         // Text::drawText(0.0f, 0.0f, 10.0f, "Sample Text", components::consoleFont, 0.5f, 0.5f);
-      //  C3D_FrameEnd(0);
+        //  C3D_FrameEnd(0);
 
+        int i;
+        const int size = 10;
 
-      //  int i;
-       // const int size = 10;
- 
-      //  for (i = 0; i < size; ++i)
-      //  {
-            //GC::Pointer<int> pInt;
-      //      GC::Pointer<int> iPtr = (int*)GC::allocate(sizeof(int), (void**)iPtr);
-          //  pInt[0] = 0;
-           
-      //  }
-        printf("OS_USEDBYTES=%i\n", osGetMemRegionUsed(MEMREGION_ALL));
-        printf("GC-AllocatedBytes=%i\n", GC::GarbageCollector::GetTotalBytesAllocated());
+        for (i = 0; i < size; ++i)
+        {
+            // GC::Pointer<int> pInt;
+            //      GC::Pointer<int> iPtr = (int*)GC::allocate(sizeof(int)*8, (void**)iPtr);
+            //     iPtr[0] = 0;
+        }
+        GC::Pointer<int> iPtr;
         
+        // Get memory information
+
+        iPtr[1] = 2;
+        iPtr[2] = 2;
+
+        printf("\x1b[36m\x1b[2;1HCmdBuf:  %6.2f%%\x1b[K\x1b[0m", C3D_GetCmdBufUsage() * 100.0f);
+        //printf("\x1b[36m\x1b[3;1HGC PointerCount: %i        \n", GC::GarbageCollector::_SizeOfObjects[0]);
+        //printf("\x1b[36m\x1b[4;1HIPtr&P: %i       ", (int)sizeof(strlen((void*)iPtr)));
         
         
     }
@@ -216,8 +218,8 @@ int main()
     graphics::Internal::Wipe();
 
     // Deinitialize and quit
-    gdbHioDevExit();
-    csndExit();
+   // gdbHioDevExit();
+  //  csndExit();
     C2D_Fini();
     C3D_Fini();
     gfxExit();

@@ -10,13 +10,13 @@ namespace GC
 
 	class GarbageCollector
 	{
-		
 
 	private:
-		// Array of pointers to pointers that are made on the stack
-		static std::vector<void **> _PointersOnStack;
 		// Holds the size of objects that are made on the stack
 		static std::vector<unsigned int> _SizeOfObjects;
+		// Array of pointers to pointers that are made on the stack
+		static std::vector<void **> _PointersOnStack;
+
 		// Holds all the generations
 		static std::vector<Generation *> _Generations;
 		// Holds total bytes allocated on the heap
@@ -27,6 +27,8 @@ namespace GC
 		virtual ~GarbageCollector() {}
 
 	public:
+		// -Holds the number of pointers registered
+		static int ptrCount;
 		// Invokes the GC for all generations
 		static void Collect();
 		// Invokes the GC only upto and including the generation specified
@@ -43,14 +45,13 @@ namespace GC
 		static void SetTotalBytesAllocated(int Value) { BytesAllocated = Value; }
 	};
 
-	void *allocate(size_t size, void **pVoid);
-
 	template <class T>
 	class Pointer
 	{
 	private:
 		void Destroy()
 		{
+
 			p = NULL;
 			GarbageCollector::Collect();
 		}
@@ -60,21 +61,18 @@ namespace GC
 
 		Pointer(T *p_ = NULL) : p(p_)
 		{
-			p = GarbageCollector::operator new(sizeof(p_), (void**)this);
+			GarbageCollector::ptrCount++;
+			p = GarbageCollector::operator new(sizeof(p_), (void **)this);
 		}
 
 		~Pointer()
 		{
+			GarbageCollector::ptrCount--;
 			GarbageCollector::SetTotalBytesAllocated(GarbageCollector::GetTotalBytesAllocated() - sizeof(*p));
 
 			p->~T(); // Explicitely call the destructor
 
 			Destroy();
-		}
-
-		Pointer &operator=(void *p_)
-		{
-			return operator=((T *)p_);
 		}
 
 		Pointer &operator=(Pointer<T> &p_)
@@ -113,16 +111,13 @@ namespace GC
 		{
 			return (void *)&p;
 		}
-		// -Some things to make it actually usable, really.
+
 		T &operator[](int i)
 		{
 			return p[i];
 		}
 	};
 
-
-
 }
 
 #include "gc.cpp"
-
